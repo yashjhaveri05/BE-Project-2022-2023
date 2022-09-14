@@ -1,0 +1,287 @@
+{
+    "haemoglobin": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "rbc_count": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "total_leukocyte_count": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "differential_leukocyte_count": [
+        {
+            "lymphocytes": {
+                "information": "",
+                "high": [],
+                "low": [],
+                "remedy_high": [],
+                "remedy_low": []
+            },
+            "monocytes": {
+                "information": "",
+                "high": [],
+                "low": [],
+                "remedy_high": [],
+                "remedy_low": []
+            },
+            "eosinophils": {
+                "information": "",
+                "high": [],
+                "low": [],
+                "remedy_high": [],
+                "remedy_low": []
+            },
+            "basophils": {
+                "information": "",
+                "high": [],
+                "low": [],
+                "remedy_high": [],
+                "remedy_low": []
+            }
+        }
+    ],
+    "platelet_count": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "mean_platelet_volume": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "bilirubin_total": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "bilirubin_direct": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "bilirubin_indirect": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "ast": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "alt": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "alkaline_phosphates": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "total_protein": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "alumin": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "urea": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "creatinine": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "uric_acid": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "calcium": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "phosphorous": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "sodium": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "potassium": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "chloride": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "HbA1c": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "estimated_average_glucose": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "glucose_fasting": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "vitamin_b12": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "vitamin_d": {
+        "information": "",
+        "high": [],
+        "low": [],
+        "remedy_high": [],
+        "remedy_low": []
+    },
+    "thyroid_profile_total": [
+        {
+            "t3_total": {
+                "information": "",
+                "high": [],
+                "low": [],
+                "remedy_high": [],
+                "remedy_low": []
+            },
+            "t4_total": {
+                "information": "",
+                "high": [],
+                "low": [],
+                "remedy_high": [],
+                "remedy_low": []
+            },
+            "tsh": {
+                "information": "",
+                "high": [],
+                "low": [],
+                "remedy_high": [],
+                "remedy_low": []
+            }
+        }
+    ],
+    "lipid_screen": [
+        {
+            "cholestrol": {
+                "information": "",
+                "high": [],
+                "low": [],
+                "remedy_high": [],
+                "remedy_low": []
+            },
+            "triglycerides": {
+                "information": "",
+                "high": [],
+                "low": [],
+                "remedy_high": [],
+                "remedy_low": []
+            },
+            "hdl_cholestrol": {
+                "information": "",
+                "high": [],
+                "low": [],
+                "remedy_high": [],
+                "remedy_low": []
+            },
+            "ldl_cholestrol": {
+                "information": "",
+                "high": [],
+                "low": [],
+                "remedy_high": [],
+                "remedy_low": []
+            },
+            "vldl_cholestrol": {
+                "information": "",
+                "high": [],
+                "low": [],
+                "remedy_high": [],
+                "remedy_low": []
+            },
+            "non_hdl_cholestrol": {
+                "information": "",
+                "high": [],
+                "low": [],
+                "remedy_high": [],
+                "remedy_low": []
+            }
+        }
+    ]
+}

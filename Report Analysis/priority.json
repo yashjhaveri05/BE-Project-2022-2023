@@ -1,0 +1,131 @@
+{
+    "haemoglobin": {
+        "priority": ""
+    },
+    "rbc_count": {
+        "priority": ""
+    },
+    "total_leukocyte_count": {
+        "priority": ""
+    },
+    "differential_leukocyte_count": [
+        {
+            "lymphocytes": {
+                "priority": ""
+            },
+            "monocytes": {
+                "priority": ""
+            },
+            "eosinophils": {
+                "priority": ""
+            },
+            "basophils": {
+                "priority": ""
+            }
+        }
+    ],
+    "platelet_count": {
+        "priority": ""
+    },
+    "mean_platelet_volume": {
+        "priority": ""
+    },
+    "bilirubin_total": {
+        "priority": ""
+    },
+    "bilirubin_direct": {
+        "priority": ""
+    },
+    "bilirubin_indirect": {
+        "priority": ""
+    },
+    "ast": {
+        "priority": ""
+    },
+    "alt": {
+        "priority": ""
+    },
+    "alkaline_phosphates": {
+        "priority": ""
+    },
+    "total_protein": {
+        "priority": ""
+    },
+    "alumin": {
+        "priority": ""
+    },
+    "urea": {
+        "priority": ""
+    },
+    "creatinine": {
+        "priority": ""
+    },
+    "uric_acid": {
+        "priority": ""
+    },
+    "calcium": {
+        "priority": ""
+    },
+    "phosphorous": {
+        "priority": ""
+    },
+    "sodium": {
+        "priority": ""
+    },
+    "potassium": {
+        "priority": ""
+    },
+    "chloride": {
+        "priority": ""
+    },
+    "HbA1c": {
+        "priority": ""
+    },
+    "estimated_average_glucose": {
+        "priority": ""
+    },
+    "glucose_fasting": {
+        "priority": ""
+    },
+    "vitamin_b12": {
+        "priority": ""
+    },
+    "vitamin_d": {
+        "priority": ""
+    },
+    "thyroid_profile_total": [
+        {
+            "t3_total": {
+                "priority": ""
+            },
+            "t4_total": {
+                "priority": ""
+            },
+            "tsh": {
+                "priority": ""
+            }
+        }
+    ],
+    "lipid_screen": [
+        {
+            "cholestrol": {
+                "priority": ""
+            },
+            "triglycerides": {
+                "priority": ""
+            },
+            "hdl_cholestrol": {
+                "priority": ""
+            },
+            "ldl_cholestrol": {
+                "priority": ""
+            },
+            "vldl_cholestrol": {
+                "priority": ""
+            },
+            "non_hdl_cholestrol": {
+                "priority": ""
+            }
+        }
+    ]
+}
