@@ -1,91 +1,91 @@
 {
     "haemoglobin": {
-        "priority": ""
+        "priority": 3
     },
     "rbc_count": {
-        "priority": ""
+        "priority": 3
     },
     "total_leukocyte_count": {
-        "priority": ""
+        "priority": 2
     },
     "differential_leukocyte_count": [
         {
             "lymphocytes": {
-                "priority": ""
+                "priority": 3
             },
             "monocytes": {
-                "priority": ""
+                "priority": 3
             },
             "eosinophils": {
-                "priority": ""
+                "priority": 2
             },
             "basophils": {
-                "priority": ""
+                "priority": 3
             }
         }
     ],
     "platelet_count": {
-        "priority": ""
+        "priority": 2
     },
     "mean_platelet_volume": {
-        "priority": ""
+        "priority": 3
     },
     "bilirubin_total": {
-        "priority": ""
+        "priority": 1
     },
     "bilirubin_direct": {
-        "priority": ""
+        "priority": 1
     },
     "bilirubin_indirect": {
-        "priority": ""
+        "priority": 1
     },
     "ast": {
-        "priority": ""
+        "priority": 3
     },
     "alt": {
-        "priority": ""
+        "priority": 3
     },
     "alkaline_phosphates": {
-        "priority": ""
+        "priority": 3
     },
     "total_protein": {
-        "priority": ""
+        "priority": 3
     },
     "alumin": {
-        "priority": ""
+        "priority": 3
     },
     "urea": {
-        "priority": ""
+        "priority": 2
     },
     "creatinine": {
-        "priority": ""
+        "priority": 2
     },
     "uric_acid": {
-        "priority": ""
+        "priority": 2
     },
     "calcium": {
-        "priority": ""
+        "priority": 4
     },
     "phosphorous": {
-        "priority": ""
+        "priority": 4
     },
     "sodium": {
-        "priority": ""
+        "priority": 4
     },
     "potassium": {
-        "priority": ""
+        "priority": 4
     },
     "chloride": {
-        "priority": ""
+        "priority": 4
     },
     "HbA1c": {
-        "priority": ""
+        "priority": 1
     },
     "estimated_average_glucose": {
-        "priority": ""
+        "priority": 1
     },
     "glucose_fasting": {
-        "priority": ""
+        "priority": 1
     },
     "vitamin_b12": {
         "priority": ""
@@ -96,35 +96,35 @@
     "thyroid_profile_total": [
         {
             "t3_total": {
-                "priority": ""
+                "priority": 1
             },
             "t4_total": {
-                "priority": ""
+                "priority": 1
             },
             "tsh": {
-                "priority": ""
+                "priority": 1
             }
         }
     ],
     "lipid_screen": [
         {
             "cholestrol": {
-                "priority": ""
+                "priority": 1
             },
             "triglycerides": {
-                "priority": ""
+                "priority": 1
             },
             "hdl_cholestrol": {
-                "priority": ""
+                "priority": 3
             },
             "ldl_cholestrol": {
-                "priority": ""
+                "priority": 1
             },
             "vldl_cholestrol": {
-                "priority": ""
+                "priority": 3
             },
             "non_hdl_cholestrol": {
-                "priority": ""
+                "priority": 3
             }
         }
     ]

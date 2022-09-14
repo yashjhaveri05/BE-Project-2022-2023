@@ -1,286 +1,286 @@
 {
     "haemoglobin": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Protein in your red blood cells that carries oxygen and carbon dioxide.",
+        "high": [null, "physician"],
+        "low": [null, null],
+        "remedy_high": ["avoid alcohol"],
+        "remedy_low": ["almonds", "walnuts", "dates"]
     },
     "rbc_count": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Red blood cells carry oxygen from your lungs to every cell in your body.",
+        "high": [null, "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["exercise", "avoid meaty foods"],
+        "remedy_low": ["leafy vegetables"]
     },
     "total_leukocyte_count": {
         "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "high": ["infection", "physician"],
+        "low": ["infection", "physician"],
+        "remedy_high": ["reduce stress"],
+        "remedy_low": ["practise good hygiene"]
     },
     "differential_leukocyte_count": [
         {
             "lymphocytes": {
-                "information": "",
-                "high": [],
-                "low": [],
-                "remedy_high": [],
-                "remedy_low": []
+                "information": "Are a part of WBC, help fight infection",
+                "high": ["infection", "physician"],
+                "low": ["infection", "physician"],
+                "remedy_high": [null],
+                "remedy_low": ["excerise", "prevent smoking"]
             },
             "monocytes": {
-                "information": "",
-                "high": [],
-                "low": [],
-                "remedy_high": [],
-                "remedy_low": []
+                "information": "Are a part of WBC, help fight infection",
+                "high": ["infection", "physician"],
+                "low": ["infection", "physician"],
+                "remedy_high": ["exercise", "avoid meaty foods"],
+                "remedy_low": ["excerise", "prevent smoking"]
             },
             "eosinophils": {
-                "information": "",
-                "high": [],
-                "low": [],
-                "remedy_high": [],
-                "remedy_low": []
+                "information": "Are a part of WBC, help fight allergies",
+                "high": ["allergy", "physician"],
+                "low": ["allergy", "physician"],
+                "remedy_high": ["avoid spicy foods", "avoid aerated drinks"],
+                "remedy_low": ["consume more diary products"]
             },
             "basophils": {
-                "information": "",
-                "high": [],
-                "low": [],
-                "remedy_high": [],
-                "remedy_low": []
+                "information": "Are a part of WBC, help fight infection",
+                "high": ["infection", "physician"],
+                "low": ["infection", "physician"],
+                "remedy_high": ["avoid sugary foods"],
+                "remedy_low": ["intake more protein"]
             }
         }
     ],
     "platelet_count": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Platelets are cells that help your blood clot.",
+        "high": [null, "physician"],
+        "low": ["chances of dengue", "physician"],
+        "remedy_high": ["dark chocolate", "onion", "tomato"],
+        "remedy_low": ["greem vegetables", "avoid alcohol"]
     },
     "mean_platelet_volume": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Average size of your platelets",
+        "high": [null, "physician"],
+        "low": ["chances of dengue", "physician"],
+        "remedy_high": ["dark chocolate", "onion", "tomato"],
+        "remedy_low": ["green vegetables", "avoid alcohol"]
     },
     "bilirubin_total": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Bilirubin in bile helpds digest food.",
+        "high": ["chance of jaundice", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["water", "avoid alcohol"],
+        "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
     },
     "bilirubin_direct": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Bilirubin in bile helpds digest food.",
+        "high": ["chance of jaundice", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["water", "avoid alcohol"],
+        "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
     },
     "bilirubin_indirect": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Bilirubin in bile helpds digest food.",
+        "high": ["chance of jaundice", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["water", "avoid alcohol"],
+        "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
     },
     "ast": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "AST is a protein made by liver cells.",
+        "high": ["chance of jaundice or fatty liver", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["exercise", "drink coffee"],
+        "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
     },
     "alt": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "ALT is a protein made by liver cells.",
+        "high": ["chance of jaundice or fatty liver", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["exercise", "drink coffee"],
+        "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
     },
-    "alkaline_phosphates": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+    "alkaline_phosphatase": {
+        "information": "Alkaline Phosphatase is a protein found in all body tissues",
+        "high": [null, null],
+        "low": [null, null],
+        "remedy_high": ["corn", "coconut", "sea foods"],
+        "remedy_low": ["yogurt", "almonds", "meat"]
     },
     "total_protein": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Proteins are important for the health and growth of the body's cells and tissues.",
+        "high": [null, null],
+        "low": ["swelling of foot", "physician"],
+        "remedy_high": ["reduce meaty foods", "reduce high protein foods"],
+        "remedy_low": ["increase protein diet"]
     },
-    "alumin": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+    "albumin": {
+        "information": "Albumin is a protein in your blood plasma, facilitating circulation of fluids throughout the body.",
+        "high": [null, "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["avoid meaty foods"],
+        "remedy_low": ["yogurt", "meaty foods"]
     },
     "urea": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Urea is the final breakdown product of the amino acids found in proteins.",
+        "high": ["can reduce kidney function", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce dairy foods", "reduce rice intake"],
+        "remedy_low": ["fruits", "green vegetables"]
     },
     "creatinine": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Creatinine is a waste product that comes from the normal wear and tear on muscles of the body.",
+        "high": ["can reduce kidney function", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce dairy foods", "reduce rice intake"],
+        "remedy_low": ["fruits", "green vegetables"]
     },
     "uric_acid": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Uric acid is a chemical created when the body breaks down substances in the body.",
+        "high": ["can reduce kidney function", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce dairy foods", "reduce rice intake"],
+        "remedy_low": ["fruits", "green vegetables", "water", "increase protein diet"]
     },
     "calcium": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Calcium is a mineral your body needs to build and maintain strong bones.",
+        "high": [null, null],
+        "low": [null, null],
+        "remedy_high": ["salty foods"],
+        "remedy_low": ["green vegetables", "consume more diary products"]
     },
     "phosphorous": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Phosphorus is needed for the growth, maintenance, and repair of all tissues and cells.",
+        "high": [null, null],
+        "low": [null, null],
+        "remedy_high": ["reduce meaty foods"],
+        "remedy_low": ["salt", "electral powder"]
     },
     "sodium": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Sodium is one of the body's electrolytes which is needed in relatively large amounts.",
+        "high": [null, null],
+        "low": [null, null],
+        "remedy_high": ["reduce meaty foods"],
+        "remedy_low": ["salt", "electral powder"]
     },
     "potassium": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Potassium helps maintain normal levels of fluid inside our cells",
+        "high": [null, null],
+        "low": [null, null],
+        "remedy_high": ["reduce meaty foods"],
+        "remedy_low": ["salt", "electral powder"]
     },
     "chloride": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Chloride works with other electrolytes and helps move fluid in and out of the cells.",
+        "high": [null, null],
+        "low": [null, null],
+        "remedy_high": ["reduce meaty foods"],
+        "remedy_low": ["salt", "electral powder"]
     },
     "HbA1c": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Test that shows the blood sugar (glucose) level was over the past two to three months",
+        "high": ["chances of diabetes", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["green vegetables", "avoid sugary foods"],
+        "remedy_low": ["intake sugary foods till it reaches a proper level", "fruits"]
     },
     "estimated_average_glucose": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Test that shows the average blood sugar (glucose) level was over the past two to three months",
+        "high": ["chances of diabetes", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["green vegetables", "avoid sugary foods"],
+        "remedy_low": ["intake sugary foods till it reaches a proper level", "fruits"]
     },
     "glucose_fasting": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Depicts the quantity of glucose or sugar in the bloodstream after an overnight fast.",
+        "high": ["chances of diabetes", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["green vegetables", "avoid sugary foods"],
+        "remedy_low": ["intake sugary foods till it reaches a proper level", "fruits"]
     },
     "vitamin_b12": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Vitamin B12 is essential for forming red blood cells and DNA.",
+        "high": [null, null],
+        "low": [null, null],
+        "remedy_high": ["reduce alcohol consumption"],
+        "remedy_low": ["green vegetables", "increase protein diet"]
     },
     "vitamin_d": {
-        "information": "",
-        "high": [],
-        "low": [],
-        "remedy_high": [],
-        "remedy_low": []
+        "information": "Vitamin D is essential for bone growth and healing.",
+        "high": [null, null],
+        "low": [null, "physician"],
+        "remedy_high": ["water"],
+        "remedy_low": ["consume more diary products"]
     },
     "thyroid_profile_total": [
         {
             "t3_total": {
-                "information": "",
-                "high": [],
-                "low": [],
-                "remedy_high": [],
-                "remedy_low": []
+                "information": "Hormones produced by the thyroid.",
+                "high": ["chance of thyroid problems", "physician"],
+                "low": ["chance of thyroid problems", "physician"],
+                "remedy_high": ["reduce junk foods", "reduce fatty foods"],
+                "remedy_low": ["spinach", "tomatoes", "milk"]
             },
             "t4_total": {
-                "information": "",
-                "high": [],
-                "low": [],
-                "remedy_high": [],
-                "remedy_low": []
+                "information": "Hormones produced by the thyroid.",
+                "high": ["chance of thyroid problems", "physician"],
+                "low": ["chance of thyroid problems", "physician"],
+                "remedy_high": ["reduce junk foods", "reduce fatty foods"],
+                "remedy_low": ["spinach", "tomatoes", "milk"]
             },
             "tsh": {
-                "information": "",
-                "high": [],
-                "low": [],
-                "remedy_high": [],
-                "remedy_low": []
+                "information": "TSH regulates hormone production and metabolism throughout the body",
+                "high": ["chance of thyroid problems", "physician"],
+                "low": ["chance of thyroid problems", "physician"],
+                "remedy_high": ["reduce junk foods", "reduce fatty foods"],
+                "remedy_low": ["spinach", "tomatoes", "milk"]
             }
         }
     ],
     "lipid_screen": [
         {
             "cholestrol": {
-                "information": "",
-                "high": [],
-                "low": [],
-                "remedy_high": [],
-                "remedy_low": []
+                "information": "Fat like substance present in the body cells.",
+                "high": ["chance of cholestrol", "physician"],
+                "low": [null, null],
+                "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+                "remedy_low": ["consume more diary products", "green vegetables"]
             },
             "triglycerides": {
-                "information": "",
-                "high": [],
-                "low": [],
-                "remedy_high": [],
-                "remedy_low": []
+                "information": "Type of fats found in the blood.",
+                "high": ["chance of cholestrol", "physician"],
+                "low": [null, null],
+                "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+                "remedy_low": ["consume more diary products", "green vegetables"]
             },
             "hdl_cholestrol": {
-                "information": "",
-                "high": [],
-                "low": [],
-                "remedy_high": [],
-                "remedy_low": []
+                "information": "Good cholestrol number",
+                "high": ["chance of cholestrol", "physician"],
+                "low": [null, null],
+                "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+                "remedy_low": ["consume more diary products", "green vegetables"]
             },
             "ldl_cholestrol": {
-                "information": "",
-                "high": [],
-                "low": [],
-                "remedy_high": [],
-                "remedy_low": []
+                "information": "Bad cholestrol number",
+                "high": ["chance of cholestrol", "physician"],
+                "low": [null, null],
+                "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+                "remedy_low": ["consume more diary products", "green vegetables"]
             },
             "vldl_cholestrol": {
-                "information": "",
-                "high": [],
-                "low": [],
-                "remedy_high": [],
-                "remedy_low": []
+                "information": "Total cholestrol - Bad cholestrol",
+                "high": ["chance of cholestrol", "physician"],
+                "low": [null, null],
+                "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+                "remedy_low": ["consume more diary products", "green vegetables"]
             },
             "non_hdl_cholestrol": {
-                "information": "",
-                "high": [],
-                "low": [],
-                "remedy_high": [],
-                "remedy_low": []
+                "information": "Total cholestrol - Good cholestrol",
+                "high": ["chance of cholestrol", "physician"],
+                "low": [null, null],
+                "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+                "remedy_low": ["consume more diary products", "green vegetables"]
             }
         }
     ]
