@@ -88,10 +88,10 @@
         "priority": 1
     },
     "vitamin_b12": {
-        "priority": ""
+        "priority": 4
     },
     "vitamin_d": {
-        "priority": ""
+        "priority": 4
     },
     "thyroid_profile_total": [
         {
