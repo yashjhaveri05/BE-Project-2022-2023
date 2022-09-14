@@ -14,7 +14,7 @@
         "remedy_low": ["leafy vegetables"]
     },
     "total_leukocyte_count": {
-        "information": "",
+        "information": "Total count of WBC in the body and help fight infections.",
         "high": ["infection", "physician"],
         "low": ["infection", "physician"],
         "remedy_high": ["reduce stress"],
