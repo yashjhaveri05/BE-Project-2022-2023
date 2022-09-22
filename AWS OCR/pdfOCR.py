@@ -50,8 +50,8 @@ def get_table_csv_results(file_name):
 
     # process using image bytes
     # get the results
-    client = boto3.client('textract', aws_access_key_id = 'AKIAWUR2U2NHRHVKAY4V',
-            aws_secret_access_key = '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', 
+    client = boto3.client('textract', aws_access_key_id = '##',
+            aws_secret_access_key = '##', 
             region_name = 'ap-south-1')
 
     response = client.analyze_document(Document={'Bytes': bytes_test}, FeatureTypes=['TABLES'])
