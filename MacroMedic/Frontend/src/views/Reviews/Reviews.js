@@ -36,10 +36,10 @@ const Reviews = () => {
     console.log(_id, _id_patient);
 
     const onSubmitHandler = async () => {
-        const rating = await api.fetchRating(review);
-        console.log('Frontend = ', rating);
-        const data = await api.addReview(_id, rating, review, _id_patient);
-        console.log(data);
+        // const rating = await api.fetchRating(review);
+        // console.log('Frontend = ', rating);
+        // const data = await api.addReview(_id, rating, review, _id_patient);
+        // console.log(data);
         history.push('/user/dashboard');
     };
 
@@ -49,11 +49,11 @@ const Reviews = () => {
                 <p>Doctor Name: {_id}</p>
             </div>)} */}
             <div>
-                <h4>Your opinion matters to us.</h4>
+                <h4>This is after meeting page. Currently it does nothing</h4>
             </div>
             <div>
                 <StyledInputContainer>
-                    <CustomInput
+                    {/* <CustomInput
                         labelText="Review"
                         formControlProps={{
                             fullWidth: true,
@@ -66,7 +66,7 @@ const Reviews = () => {
                         onChange={(e) => {
                             setReview(e.target.value);
                         }}
-                    />
+                    /> */}
                 </StyledInputContainer>
                 {/* <StarRatingContainer>
                     <StarRatings

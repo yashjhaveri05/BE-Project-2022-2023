@@ -214,7 +214,7 @@ const getAllPreviousAppointments = async (args, { req }) => {
         patientId: args.user_id,
         status: { $ne: "Pending" },
       }).populate("doctorId");
-      if (appointment) {
+      if (appointment) {  
         return appointment;
       }
     } else {
@@ -222,8 +222,8 @@ const getAllPreviousAppointments = async (args, { req }) => {
         doctorId: args.user_id,
         status: { $ne: "Pending" },
       }).populate("patientId");
-      if (appointment) {
-        return appointment;
+      if (appointment) {    
+        return appointment;   
       }
     }
   } catch (err) {

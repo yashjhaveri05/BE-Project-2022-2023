@@ -69,7 +69,6 @@ export default function TableList() {
       for (let i = 0; i < data.length; i++) {
         let date = new Date(data[i].date);
         let time = data[i].date.split("T")[1];
-        // date = date.toLocaleDateString("pt-PT");
         date = date.toDateString();
         upp.push([
           `${j}`,
@@ -94,7 +93,7 @@ export default function TableList() {
     const mf = async () => {
       try {
         data = await api.getAllPreviousAppointments(userData._id);
-        console.log(data);
+        console.log("Varun",data[0]);
       } catch (error) {
         console.log(error);
       }
@@ -104,20 +103,21 @@ export default function TableList() {
       let upp = [],
         ppp = [];
       for (let i = 0; i < data.length; i++) {
-        // let date = new Date(data[i].date);
+        let date = new Date(data[i].date);
+        console.log("date",date.toDateString());
         let time =
-          new Date().toLocaleTimeString().split(":")[0] +
+          date.toLocaleTimeString().split(":")[0] +
           ":" +
-          new Date().toLocaleTimeString().split(":")[1];
-        // console.log(new Date().toLocaleTimeString());
-        // date = date.toLocaleDateString("pt-PT");
+          date.toLocaleTimeString().split(":")[1];
+        console.log("here:",time);
+
         ppp.push([
           `${k}`,
           userData.role === "doctor"
             ? data[i].patientId.name
             : data[i].doctorId.name,
-          // date + "\t\t@" + time,
-          new Date().toDateString() + "\t\t@" + time,
+        
+          date.toDateString() + "\t\t@" + time,
           data[i].description,
           data[i].status,
           data[i].report,

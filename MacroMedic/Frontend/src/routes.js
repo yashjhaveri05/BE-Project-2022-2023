@@ -72,14 +72,14 @@ const dashboardRoutes = [
     component: MapsNew,
     layout: "/user",
   },
-  {
-    path: "/symptoms",
-    name: "Pro Feature",
-    rtlName: "خرائط",
-    icon: "person_search",
-    component: Symptoms,
-    layout: "/user",
-  },
+  // {
+  //   path: "/symptoms",
+  //   name: "Pro Feature",
+  //   rtlName: "خرائط",
+  //   icon: "person_search",
+  //   component: Symptoms,
+  //   layout: "/user",
+  // },
   {
     path: "/reviews",
     name: "",

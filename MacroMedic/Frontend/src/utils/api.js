@@ -509,6 +509,7 @@ const api = {
             status
             description
             report
+            date
           }
         }
         `,
