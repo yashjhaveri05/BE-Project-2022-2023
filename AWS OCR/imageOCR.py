@@ -5,7 +5,12 @@ import io
 from io import BytesIO
 import sys
 from pprint import pprint
+from dotenv import load_dotenv
 
+load_dotenv()
+
+AWSSecretKey = os.getenv('AWSSecretKey')
+AWSAccessKeyId = os.getenv('AWSAccessKeyId')
 
 def get_rows_columns_map(table_result, blocks_map):
     rows = {}
@@ -49,8 +54,8 @@ def get_table_csv_results(file_name):
 
     # process using image bytes
     # get the results
-    client = boto3.client('textract', aws_access_key_id = 'AKIAWUR2U2NHRHVKAY4V',
-            aws_secret_access_key = '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', 
+    client = boto3.client('textract', aws_access_key_id = AWSAccessKeyId,
+            aws_secret_access_key = AWSSecretKey, 
             region_name = 'ap-south-1')
 
     response = client.analyze_document(Document={'Bytes': bytes_test}, FeatureTypes=['TABLES'])
