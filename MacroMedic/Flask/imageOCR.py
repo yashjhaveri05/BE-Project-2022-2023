@@ -6,6 +6,7 @@ from io import BytesIO
 import sys
 from pprint import pprint
 from dotenv import load_dotenv
+import pandas as pd
 
 load_dotenv()
 
@@ -50,7 +51,6 @@ def get_table_csv_results(file_name):
     with open(file_name, 'rb') as file:
         img_test = file.read()
         bytes_test = bytearray(img_test)
-        print('Image loaded', file_name)
 
     # process using image bytes
     # get the results
@@ -75,40 +75,84 @@ def get_table_csv_results(file_name):
 
     csv = ''
     for index, table in enumerate(table_blocks):
-        csv += generate_table_csv(table, blocks_map, index +1)
-        csv += '\n\n'
+        csv = generate_table_csv(table, blocks_map, index +1)
 
     return csv
 
 def generate_table_csv(table_result, blocks_map, table_index):
     rows = get_rows_columns_map(table_result, blocks_map)
 
-    table_id = 'Table_' + str(table_index)
-    
-    # get cells.
-    csv = 'Table: {0}\n\n'.format(table_id)
+    columns = []
+    entity = []
+    obs = []
+    unit = []
+    interval = []
 
     for row_index, cols in rows.items():
-        
-        for col_index, text in cols.items():
-            csv += '{}'.format(text) + ","
-        csv += '\n'
-        
-    csv += '\n\n\n'
-    return csv
+        if row_index == 1:
+            for col_index, text in cols.items():
+                columns.append(text.strip())
+        else:
+            entity.append(cols[1].strip())
+            if cols[2] == '':
+                obs.append(-1)
+            else:
+                cols[2] = cols[2].replace(',', '')
+                obs.append(float(cols[2]))
+            unit.append(cols[3].strip())
+            if cols[4] == '':
+                interval.append(-1)
+            else:
+                interval.append(cols[4].strip())
+
+    data = {
+        columns[0] : entity,
+        columns[1] : obs,
+        columns[2] : unit,
+        columns[3] : interval
+    }
+
+    df = pd.DataFrame(data)
+    return df
+
+def analysis(df):
+    anomalies = {}
+    columns = df.columns
+    for i in range(len(df)):
+        parameter = df.loc[i, columns[0]]
+        observed = df.loc[i, columns[1]]
+        limits = df.loc[i, columns[3]]
+        vals = []
+        if int(observed) == -1 and int(limits) == -1:
+            pass
+        else:
+            limits = limits.split("-")
+            max_limit = float(limits[1])
+            min_limit = float(limits[0])
+            adj_max = float(max_limit/0.9)
+            adj_min = float(((min_limit/adj_max) - 0.1)*adj_max)
+            if float(observed) < adj_min:
+                vals.append("Low")
+                vals.append(1)
+            elif float(observed) > adj_max:
+                vals.append("High")
+                vals.append(1)
+            elif float(observed) < adj_max and float(observed) > max_limit:
+                vals.append("High")
+                vals.append(0)
+            elif float(observed) > adj_min and float(observed) < min_limit:
+                vals.append("Low")
+                vals.append(0)
+        if vals != []:
+            anomalies[parameter] = vals
+    return anomalies
 
 def main(file_name):
     table_csv = get_table_csv_results(file_name)
-
-    output_file = 'output.csv'
-
-    # replace content
-    with open(output_file, "wt") as fout:
-        fout.write(table_csv)
-
-    # show the results
-    print('CSV OUTPUT FILE: ', output_file)
-
+    anomalies = analysis(table_csv)
+    print(anomalies)
+    #Sample Output:
+    # {'Eosinophils ': ['High', 1], 'MPV (Mean Platelet Volume) ': ['High', 0]}
 
 if __name__ == "__main__":
     file_name = sys.argv[1]
