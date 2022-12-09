@@ -42,11 +42,11 @@ export default function ProFeature() {
   return (
     <BoxContainer>
       <FormContainer>
-      <FormLabel component="legend">Options</FormLabel>
+      <FormLabel component="legend">Choose the ailments you have been suffering from</FormLabel>
       <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-        <FormControlLabel value="a" control={<Radio />} label="A" />
-        <FormControlLabel value="b" control={<Radio />} label="B" />
-        <FormControlLabel value="c" control={<Radio />} label="C" />
+        <FormControlLabel value="a" control={<Radio />} label="Diabetes" />
+        <FormControlLabel value="b" control={<Radio />} label="Cholestrol" />
+        <FormControlLabel value="c" control={<Radio />} label="Blood Pressure" />
       </RadioGroup>
       </FormContainer>
       
