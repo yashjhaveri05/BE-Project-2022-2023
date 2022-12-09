@@ -149,6 +149,19 @@ export default function RTLNavbarLinks() {
         color={window.innerWidth > 959 ? "transparent" : "white"}
         justIcon={window.innerWidth > 959}
         simple={!(window.innerWidth > 959)}
+        // aria-label="Person"
+        href="/profeature"
+        className={classes.buttonLink}
+      >
+       <p className={classes.linkText}>Pro Feature</p>
+        {/* <Hidden mdUp implementation="css">
+          <p className={classes.linkText}>حساب کاربری</p>
+        </Hidden> */}
+      </Button>
+      <Button
+        color={window.innerWidth > 959 ? "transparent" : "white"}
+        justIcon={window.innerWidth > 959}
+        simple={!(window.innerWidth > 959)}
         aria-label="Person"
         className={classes.buttonLink}
       >

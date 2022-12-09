@@ -21,7 +21,7 @@ import RTLPage from "views/RTLPage/RTLPage.js";
 import Symptoms from "views/Symptoms/Symptoms";
 import Reviews from "views/Reviews/Reviews";
 import DoctorProfile from "views/DoctorProfile/DoctorProfile";
-
+import ProFeature from "views/ProFeature/ProFeature";
 
 const dashboardRoutes = [
   {
@@ -72,14 +72,22 @@ const dashboardRoutes = [
     component: MapsNew,
     layout: "/user",
   },
-  // {
-  //   path: "/symptoms",
-  //   name: "Pro Feature",
-  //   rtlName: "خرائط",
-  //   icon: "person_search",
-  //   component: Symptoms,
-  //   layout: "/user",
-  // },
+  {
+    path: "/symptoms",
+    name: "Symptoms",
+    rtlName: "خرائط",
+    icon: "person_search",
+    component: Symptoms,
+    layout: "/user",
+  },
+  {
+    path: "/profeature",
+    name: "Pro Feature",
+    rtlName: "خرائط",
+    icon: "person_search",
+    component: ProFeature,
+    layout: "/user",
+  },
   {
     path: "/reviews",
     name: "",
