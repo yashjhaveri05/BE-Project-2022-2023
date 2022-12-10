@@ -46,7 +46,7 @@ g = open('../Report Analysis/priority.json')
 priority_list = json.load(g)
 g.close()
 
-output = {'eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0], "haemoglobin": ['high', 1]}
+output = {'eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0]}
 output = dict((k.lower(), v) for k, v in output.items()) 
 
 def getPriorityValue(word):

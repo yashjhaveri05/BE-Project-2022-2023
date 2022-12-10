@@ -20,38 +20,34 @@
         "remedy_high": ["reduce stress"],
         "remedy_low": ["practise good hygiene"]
     },
-    "differential_leukocyte_count": [
-        {
-            "lymphocytes": {
-                "information": "Are a part of WBC, help fight infection",
-                "high": ["infection", "physician"],
-                "low": ["infection", "physician"],
-                "remedy_high": [null],
-                "remedy_low": ["excerise", "prevent smoking"]
-            },
-            "monocytes": {
-                "information": "Are a part of WBC, help fight infection",
-                "high": ["infection", "physician"],
-                "low": ["infection", "physician"],
-                "remedy_high": ["exercise", "avoid meaty foods"],
-                "remedy_low": ["excerise", "prevent smoking"]
-            },
-            "eosinophils": {
-                "information": "Are a part of WBC, help fight allergies",
-                "high": ["allergy", "physician"],
-                "low": ["allergy", "physician"],
-                "remedy_high": ["avoid spicy foods", "avoid aerated drinks"],
-                "remedy_low": ["consume more diary products"]
-            },
-            "basophils": {
-                "information": "Are a part of WBC, help fight infection",
-                "high": ["infection", "physician"],
-                "low": ["infection", "physician"],
-                "remedy_high": ["avoid sugary foods"],
-                "remedy_low": ["intake more protein"]
-            }
-        }
-    ],
+    "lymphocytes": {
+        "information": "Are a part of WBC, help fight infection",
+        "high": ["infection", "physician"],
+        "low": ["infection", "physician"],
+        "remedy_high": [null],
+        "remedy_low": ["excerise", "prevent smoking"]
+    },
+    "monocytes": {
+        "information": "Are a part of WBC, help fight infection",
+        "high": ["infection", "physician"],
+        "low": ["infection", "physician"],
+        "remedy_high": ["exercise", "avoid meaty foods"],
+        "remedy_low": ["excerise", "prevent smoking"]
+    },
+    "eosinophils": {
+        "information": "Are a part of WBC, help fight allergies",
+        "high": ["allergy", "physician"],
+        "low": ["allergy", "physician"],
+        "remedy_high": ["avoid spicy foods", "avoid aerated drinks"],
+        "remedy_low": ["consume more diary products"]
+    },
+    "basophils": {
+        "information": "Are a part of WBC, help fight infection",
+        "high": ["infection", "physician"],
+        "low": ["infection", "physician"],
+        "remedy_high": ["avoid sugary foods"],
+        "remedy_low": ["intake more protein"]
+    },
     "platelet_count": {
         "information": "Platelets are cells that help your blood clot.",
         "high": [null, "physician"],
@@ -213,75 +209,67 @@
         "remedy_high": ["water"],
         "remedy_low": ["consume more diary products"]
     },
-    "thyroid_profile_total": [
-        {
-            "t3_total": {
-                "information": "Hormones produced by the thyroid.",
-                "high": ["chance of thyroid problems", "physician"],
-                "low": ["chance of thyroid problems", "physician"],
-                "remedy_high": ["reduce junk foods", "reduce fatty foods"],
-                "remedy_low": ["spinach", "tomatoes", "milk"]
-            },
-            "t4_total": {
-                "information": "Hormones produced by the thyroid.",
-                "high": ["chance of thyroid problems", "physician"],
-                "low": ["chance of thyroid problems", "physician"],
-                "remedy_high": ["reduce junk foods", "reduce fatty foods"],
-                "remedy_low": ["spinach", "tomatoes", "milk"]
-            },
-            "tsh": {
-                "information": "TSH regulates hormone production and metabolism throughout the body",
-                "high": ["chance of thyroid problems", "physician"],
-                "low": ["chance of thyroid problems", "physician"],
-                "remedy_high": ["reduce junk foods", "reduce fatty foods"],
-                "remedy_low": ["spinach", "tomatoes", "milk"]
-            }
-        }
-    ],
-    "lipid_screen": [
-        {
-            "cholestrol": {
-                "information": "Fat like substance present in the body cells.",
-                "high": ["chance of cholestrol", "physician"],
-                "low": [null, null],
-                "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
-                "remedy_low": ["consume more diary products", "green vegetables"]
-            },
-            "triglycerides": {
-                "information": "Type of fats found in the blood.",
-                "high": ["chance of cholestrol", "physician"],
-                "low": [null, null],
-                "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
-                "remedy_low": ["consume more diary products", "green vegetables"]
-            },
-            "hdl_cholestrol": {
-                "information": "Good cholestrol number",
-                "high": ["chance of cholestrol", "physician"],
-                "low": [null, null],
-                "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
-                "remedy_low": ["consume more diary products", "green vegetables"]
-            },
-            "ldl_cholestrol": {
-                "information": "Bad cholestrol number",
-                "high": ["chance of cholestrol", "physician"],
-                "low": [null, null],
-                "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
-                "remedy_low": ["consume more diary products", "green vegetables"]
-            },
-            "vldl_cholestrol": {
-                "information": "Total cholestrol - Bad cholestrol",
-                "high": ["chance of cholestrol", "physician"],
-                "low": [null, null],
-                "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
-                "remedy_low": ["consume more diary products", "green vegetables"]
-            },
-            "non_hdl_cholestrol": {
-                "information": "Total cholestrol - Good cholestrol",
-                "high": ["chance of cholestrol", "physician"],
-                "low": [null, null],
-                "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
-                "remedy_low": ["consume more diary products", "green vegetables"]
-            }
-        }
-    ]
+    "t3_total": {
+        "information": "Hormones produced by the thyroid.",
+        "high": ["chance of thyroid problems", "physician"],
+        "low": ["chance of thyroid problems", "physician"],
+        "remedy_high": ["reduce junk foods", "reduce fatty foods"],
+        "remedy_low": ["spinach", "tomatoes", "milk"]
+    },
+    "t4_total": {
+        "information": "Hormones produced by the thyroid.",
+        "high": ["chance of thyroid problems", "physician"],
+        "low": ["chance of thyroid problems", "physician"],
+        "remedy_high": ["reduce junk foods", "reduce fatty foods"],
+        "remedy_low": ["spinach", "tomatoes", "milk"]
+    },
+    "tsh": {
+        "information": "TSH regulates hormone production and metabolism throughout the body",
+        "high": ["chance of thyroid problems", "physician"],
+        "low": ["chance of thyroid problems", "physician"],
+        "remedy_high": ["reduce junk foods", "reduce fatty foods"],
+        "remedy_low": ["spinach", "tomatoes", "milk"]
+    },
+    "cholestrol": {
+        "information": "Fat like substance present in the body cells.",
+        "high": ["chance of cholestrol", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+        "remedy_low": ["consume more diary products", "green vegetables"]
+    },
+    "triglycerides": {
+        "information": "Type of fats found in the blood.",
+        "high": ["chance of cholestrol", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+        "remedy_low": ["consume more diary products", "green vegetables"]
+    },
+    "hdl_cholestrol": {
+        "information": "Good cholestrol number",
+        "high": ["chance of cholestrol", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+        "remedy_low": ["consume more diary products", "green vegetables"]
+    },
+    "ldl_cholestrol": {
+        "information": "Bad cholestrol number",
+        "high": ["chance of cholestrol", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+        "remedy_low": ["consume more diary products", "green vegetables"]
+    },
+    "vldl_cholestrol": {
+        "information": "Total cholestrol - Bad cholestrol",
+        "high": ["chance of cholestrol", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+        "remedy_low": ["consume more diary products", "green vegetables"]
+    },
+    "non_hdl_cholestrol": {
+        "information": "Total cholestrol - Good cholestrol",
+        "high": ["chance of cholestrol", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+        "remedy_low": ["consume more diary products", "green vegetables"]
+    }
 }

@@ -8,22 +8,18 @@
     "total_leukocyte_count": {
         "priority": 2
     },
-    "differential_leukocyte_count": [
-        {
-            "lymphocytes": {
-                "priority": 3
-            },
-            "monocytes": {
-                "priority": 3
-            },
-            "eosinophils": {
-                "priority": 2
-            },
-            "basophils": {
-                "priority": 3
-            }
-        }
-    ],
+    "lymphocytes": {
+        "priority": 3
+    },
+    "monocytes": {
+        "priority": 3
+    },
+    "eosinophils": {
+        "priority": 2
+    },
+    "basophils": {
+        "priority": 3
+    },
     "platelet_count": {
         "priority": 2
     },
@@ -67,16 +63,16 @@
         "priority": 4
     },
     "phosphorous": {
-        "priority": 4
+        "priority": 3
     },
     "sodium": {
-        "priority": 4
+        "priority": 3
     },
     "potassium": {
-        "priority": 4
+        "priority": 3
     },
     "chloride": {
-        "priority": 4
+        "priority": 3
     },
     "HbA1c": {
         "priority": 1
@@ -88,44 +84,36 @@
         "priority": 1
     },
     "vitamin_b12": {
-        "priority": 4
+        "priority": 3
     },
     "vitamin_d": {
-        "priority": 4
+        "priority": 3
     },
-    "thyroid_profile_total": [
-        {
-            "t3_total": {
-                "priority": 1
-            },
-            "t4_total": {
-                "priority": 1
-            },
-            "tsh": {
-                "priority": 1
-            }
-        }
-    ],
-    "lipid_screen": [
-        {
-            "cholestrol": {
-                "priority": 1
-            },
-            "triglycerides": {
-                "priority": 1
-            },
-            "hdl_cholestrol": {
-                "priority": 3
-            },
-            "ldl_cholestrol": {
-                "priority": 1
-            },
-            "vldl_cholestrol": {
-                "priority": 3
-            },
-            "non_hdl_cholestrol": {
-                "priority": 3
-            }
-        }
-    ]
+    "t3_total": {
+        "priority": 1
+    },
+    "t4_total": {
+        "priority": 1
+    },
+    "tsh": {
+        "priority": 1
+    },
+    "cholestrol": {
+        "priority": 1
+    },
+    "triglycerides": {
+        "priority": 1
+    },
+    "hdl_cholestrol": {
+        "priority": 3
+    },
+    "ldl_cholestrol": {
+        "priority": 1
+    },
+    "vldl_cholestrol": {
+        "priority": 3
+    },
+    "non_hdl_cholestrol": {
+        "priority": 3
+    }
 }
