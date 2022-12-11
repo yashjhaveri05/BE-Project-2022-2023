@@ -1,12 +1,10 @@
-import webbrowser, os
+import os
 import json
 import boto3
-import io
-from io import BytesIO
 import sys
-from pprint import pprint
 from dotenv import load_dotenv
 import pandas as pd
+import pypdfium2 as pdfium
 
 load_dotenv()
 
@@ -214,20 +212,46 @@ def getAnalysis(output, report_list, priority_list):
   print(final_dict)
   print(high_priority_dict)
 
-def main(file_name):
-    table_csv = get_table_csv_results(file_name)
-    anomalies = analysis(table_csv)
-    print(anomalies)
-    #Sample Output:
-    output = {'Eosinophils ': ['high', 1], 'MPV (Mean Platelet Volume) ': ['high', 0]}
+def convertpdf2image(file_name):
+    pdf = pdfium.PdfDocument(file_name)
+    images = []
+    for i in range(len(pdf)):
+        page = pdf.get_page(i)
+        pil_image = page.render_to(
+            pdfium.BitmapConv.pil_image,
+        )
+        file_name = file_name.replace(".", "_")
+        output_path = file_name + "_pg" + str(i) + ".jpg"
+        images.append(output_path)
+        pil_image.save(output_path)
+    return images
 
+def main(file_name):
+    images = convertpdf2image(file_name)
+    for i in range(len(images)):
+        table_csv = get_table_csv_results(images[i])
+        if table_csv.empty:
+            pass
+        elif i==0:
+            df = table_csv
+        elif i==3:
+            break
+        else:
+            df = df.append(table_csv, ignore_index = True)
+        os.remove(images[i])
+    print(df)
+    anomalies = analysis(df)
+    print(anomalies)
+    # #Sample Output:
+    # # output = {'Eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0], 'Vitamin B12 level (Serum,CMIA)': ['low', 0]}
+    output = dict((k.lower(), v) for k, v in anomalies.items()) 
     f = open('../../Report Analysis/analysis.json')
     report_list = json.load(f)
-    print(report_list)
+    # # print(report_list)
     f.close()
     g = open('../../Report Analysis/priority.json')
     priority_list = json.load(g)
-    print(priority_list)
+    # # print(priority_list)
     g.close()
 
     # result_list = getPriority(output, priority_list)
