@@ -46,55 +46,77 @@ g = open('../Report Analysis/priority.json')
 priority_list = json.load(g)
 g.close()
 
-output = {'eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0]}
+output = {'eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0],  'Glucose_fasting': ['high', 1]}
 output = dict((k.lower(), v) for k, v in output.items()) 
 
-def getPriorityValue(word):
-  for key in priority_list:
-    if word == key:
-      return priority_list.get(key).get('priority')
-  for i in priority_list.keys():
-    if type(priority_list.get(i)) == list:
-      sub_list = priority_list.get(i)[0]
-      for key in sub_list:
-        if word == key:
-          return sub_list.get(key).get('priority')
-  return 6
-
-def getPriority(output):
-  key_dict = list(output.keys())
-  final_list = []
-  final_priority = 5
-  for i in key_dict:
-    val = getPriorityValue(i)
-    print(final_list)
-    if val < final_priority:
-      final_priority = val
-      final_list.clear()
-      final_list.append(i)
-    elif val == final_priority:
-      final_list.append(i)
-  return final_list
-
-def getAnalysis(result_list, output):
+def getAnalysis(output, report_list, priority_list):
+  result_list = list(output.keys())
+  final_dict = {}
+  high_priority_dict = {}
+  high_pri = 6
   for i in result_list:
     rep_list = report_list.get(i)
-    if rep_list == None:
-      for j in report_list.keys():
-        if type(report_list.get(j)) == list:
-          sub_list = report_list.get(j)[0]
-          for key in sub_list:
-            if i == key:
-              rep_list = sub_list.get(key)
-    print(rep_list)
-    output_value = output.get(i)
-    output_list = rep_list.get(output_value[0])
-    output_remedy = rep_list.get("remedy_" + output_value[0])
-    if output_value[1] == 1:
-      print("you need to visit a " + output_list[1])
-    if output_list[0]:
-      print(output_list[0])
-    print("Remedy: ", output_remedy)
+    if rep_list != None:
+      priority = priority_list.get(i)
+      rep_list['priority'] = priority['priority']
+      final_dict[i] = rep_list
+      if priority['priority'] < high_pri:
+        high_pri = priority['priority']
+        high_priority_dict.clear()
+        high_priority_dict[i] = rep_list
+      elif priority['priority'] == high_pri:
+        high_priority_dict[i] = rep_list
+  print("Final list of all: ", final_dict)
+  print("Highest priority: ", high_priority_dict)
 
-result_list = getPriority(output)
-getAnalysis(result_list, output)
+getAnalysis(output, report_list, priority_list)
+
+# def getPriorityValue(word):
+#   for key in priority_list:
+#     if word == key:
+#       return priority_list.get(key).get('priority')
+#   for i in priority_list.keys():
+#     if type(priority_list.get(i)) == list:
+#       sub_list = priority_list.get(i)[0]
+#       for key in sub_list:
+#         if word == key:
+#           return sub_list.get(key).get('priority')
+#   return 6
+
+# def getPriority(output):
+#   key_dict = list(output.keys())
+#   final_list = []
+#   final_priority = 5
+#   for i in key_dict:
+#     val = getPriorityValue(i)
+#     print(final_list)
+#     if val < final_priority:
+#       final_priority = val
+#       final_list.clear()
+#       final_list.append(i)
+#     elif val == final_priority:
+#       final_list.append(i)
+#   return final_list
+
+# def getAnalysis(result_list, output):
+#   for i in result_list:
+#     rep_list = report_list.get(i)
+#     if rep_list == None:
+#       for j in report_list.keys():
+#         if type(report_list.get(j)) == list:
+#           sub_list = report_list.get(j)[0]
+#           for key in sub_list:
+#             if i == key:
+#               rep_list = sub_list.get(key)
+#     print(rep_list)
+#     output_value = output.get(i)
+#     output_list = rep_list.get(output_value[0])
+#     output_remedy = rep_list.get("remedy_" + output_value[0])
+#     if output_value[1] == 1:
+#       print("you need to visit a " + output_list[1])
+#     if output_list[0]:
+#       print(output_list[0])
+#     print("Remedy: ", output_remedy)
+
+# result_list = getPriority(output)
+# getAnalysis(result_list, output)
