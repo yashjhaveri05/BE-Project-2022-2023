@@ -86,6 +86,9 @@
     "vitamin_b12": {
         "priority": 3
     },
+    "vitamin b12 level (serum,cmia)": {
+        "priority": 3
+    },
     "vitamin_d": {
         "priority": 3
     },
@@ -115,5 +118,8 @@
     },
     "non_hdl_cholestrol": {
         "priority": 3
+    },
+    "mpv (mean platelet volume)": {
+        "priority": 2
     }
 }

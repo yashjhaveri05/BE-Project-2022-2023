@@ -209,6 +209,13 @@
         "remedy_high": ["water"],
         "remedy_low": ["consume more diary products"]
     },
+    "vitamin b12 level (serum,cmia)": {
+        "information": "Vitamin B12 is essential for forming red blood cells and DNA.",
+        "high": [null, null],
+        "low": [null, null],
+        "remedy_high": ["reduce alcohol consumption"],
+        "remedy_low": ["green vegetables", "increase protein diet"]
+    },
     "t3_total": {
         "information": "Hormones produced by the thyroid.",
         "high": ["chance of thyroid problems", "physician"],
@@ -271,5 +278,12 @@
         "low": [null, null],
         "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
         "remedy_low": ["consume more diary products", "green vegetables"]
+    }, 
+    "mpv (mean platelet volume)": {
+        "information": "Platelets are cells that help your blood clot.",
+        "high": [null, "physician"],
+        "low": ["chances of dengue", "physician"],
+        "remedy_high": ["dark chocolate", "onion", "tomato"],
+        "remedy_low": ["greem vegetables", "avoid alcohol"]
     }
 }
