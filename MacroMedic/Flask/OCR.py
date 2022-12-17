@@ -85,12 +85,12 @@ def generate_table_csv(table_result, blocks_map, table_index):
     obs = []
     unit = []
     interval = []
-
+    print("Processing Table: " + str(table_index))
     for row_index, cols in rows.items():
         if row_index == 1:
             for col_index, text in cols.items():
                 columns.append(text.strip())
-        else:
+        elif "Units" in columns:
             entity.append(cols[1].strip())
             if cols[2] == '':
                 obs.append(-1)
@@ -103,13 +103,35 @@ def generate_table_csv(table_result, blocks_map, table_index):
             else:
                 interval.append(cols[4].strip())
 
-    data = {
-        columns[0] : entity,
-        columns[1] : obs,
-        columns[2] : unit,
-        columns[3] : interval
-    }
+            data = {
+                columns[0] : entity,
+                columns[1] : obs,
+                columns[2] : unit,
+                columns[3] : interval
+            }
+        elif "Unit" in columns:
+            entity.append(cols[1].strip())
+            if cols[2] == '':
+                obs.append(-1)
+            else:
+                cols[2] = cols[2].replace(',', '')
+                obs.append(float(cols[2]))
+            unit.append(cols[3].strip())
+            if cols[4] == '':
+                interval.append(-1)
+            else:
+                interval.append(cols[4].strip())
 
+            data = {
+                columns[0] : entity,
+                columns[1] : obs,
+                columns[2] : unit,
+                columns[3] : interval
+            }
+        else:
+            data = {}
+            break
+            
     df = pd.DataFrame(data)
     return df
 
@@ -124,9 +146,17 @@ def analysis(df):
         if int(observed) == -1 and int(limits) == -1:
             pass
         else:
-            limits = limits.split("-")
-            max_limit = float(limits[1])
-            min_limit = float(limits[0])
+            if "<" in limits:
+                max_limit = float(limits[1:])
+                min_limit = 0.0
+            elif "-" in limits:
+                limits = limits.split("-")
+                max_limit = float(limits[1])
+                min_limit = float(limits[0])
+            else:
+                limits = limits.split(" ")
+                max_limit = float(limits[1])
+                min_limit = float(limits[0])
             adj_max = float(max_limit/0.9)
             adj_min = float(((min_limit/adj_max) - 0.1)*adj_max)
             if float(observed) < adj_min:
