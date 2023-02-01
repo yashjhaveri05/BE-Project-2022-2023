@@ -1,0 +1,289 @@
+{
+    "haemoglobin": {
+        "information": "Protein in your red blood cells that carries oxygen and carbon dioxide.",
+        "high": [null, "physician"],
+        "low": [null, null],
+        "remedy_high": ["avoid alcohol"],
+        "remedy_low": ["almonds", "walnuts", "dates"]
+    },
+    "rbc_count": {
+        "information": "Red blood cells carry oxygen from your lungs to every cell in your body.",
+        "high": [null, "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["exercise", "avoid meaty foods"],
+        "remedy_low": ["leafy vegetables"]
+    },
+    "total_leukocyte_count": {
+        "information": "Total count of WBC in the body and help fight infections.",
+        "high": ["infection", "physician"],
+        "low": ["infection", "physician"],
+        "remedy_high": ["reduce stress"],
+        "remedy_low": ["practise good hygiene"]
+    },
+    "lymphocytes": {
+        "information": "Are a part of WBC, help fight infection",
+        "high": ["infection", "physician"],
+        "low": ["infection", "physician"],
+        "remedy_high": [null],
+        "remedy_low": ["excerise", "prevent smoking"]
+    },
+    "monocytes": {
+        "information": "Are a part of WBC, help fight infection",
+        "high": ["infection", "physician"],
+        "low": ["infection", "physician"],
+        "remedy_high": ["exercise", "avoid meaty foods"],
+        "remedy_low": ["excerise", "prevent smoking"]
+    },
+    "eosinophils": {
+        "information": "Are a part of WBC, help fight allergies",
+        "high": ["allergy", "physician"],
+        "low": ["allergy", "physician"],
+        "remedy_high": ["avoid spicy foods", "avoid aerated drinks"],
+        "remedy_low": ["consume more diary products"]
+    },
+    "basophils": {
+        "information": "Are a part of WBC, help fight infection",
+        "high": ["infection", "physician"],
+        "low": ["infection", "physician"],
+        "remedy_high": ["avoid sugary foods"],
+        "remedy_low": ["intake more protein"]
+    },
+    "platelet_count": {
+        "information": "Platelets are cells that help your blood clot.",
+        "high": [null, "physician"],
+        "low": ["chances of dengue", "physician"],
+        "remedy_high": ["dark chocolate", "onion", "tomato"],
+        "remedy_low": ["greem vegetables", "avoid alcohol"]
+    },
+    "mean_platelet_volume": {
+        "information": "Average size of your platelets",
+        "high": [null, "physician"],
+        "low": ["chances of dengue", "physician"],
+        "remedy_high": ["dark chocolate", "onion", "tomato"],
+        "remedy_low": ["green vegetables", "avoid alcohol"]
+    },
+    "bilirubin_total": {
+        "information": "Bilirubin in bile helpds digest food.",
+        "high": ["chance of jaundice", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["water", "avoid alcohol"],
+        "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
+    },
+    "bilirubin_direct": {
+        "information": "Bilirubin in bile helpds digest food.",
+        "high": ["chance of jaundice", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["water", "avoid alcohol"],
+        "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
+    },
+    "bilirubin_indirect": {
+        "information": "Bilirubin in bile helpds digest food.",
+        "high": ["chance of jaundice", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["water", "avoid alcohol"],
+        "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
+    },
+    "ast": {
+        "information": "AST is a protein made by liver cells.",
+        "high": ["chance of jaundice or fatty liver", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["exercise", "drink coffee"],
+        "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
+    },
+    "alt": {
+        "information": "ALT is a protein made by liver cells.",
+        "high": ["chance of jaundice or fatty liver", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["exercise", "drink coffee"],
+        "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
+    },
+    "alkaline_phosphatase": {
+        "information": "Alkaline phosphatase (ALP) is a type of enzyme found in various tissues including the liver, bones, and intestines.",
+        "high": ["jaundice", "bone pain", "weakness or fatigue", "abdominal pain","loss of appetite"],
+        "low": ["muscle weakness", "bone fractures", "softening of the bones", "poor growth in children"],
+        "remedy_high": ["leafy green vegetables", "lean proteins, such as poultry, fish, and beans", "herbs and spices, such as turmeric and ginger", "reducing alcohol intake"],
+        "remedy_low": ["dairy products, such as milk, yogurt, and cheese", "almonds", "meat and poultry, particularly liver and other organ meats","eggs","brown rice"]
+    },
+    "total_protein": {
+        "information": "Total protein is a measurement of all the different types of protein in the blood, including albumin and globulin. It helps evaluate the overall protein status of an individual and can be used to diagnose certain conditions such as liver disease, kidney disease, malnutrition, and others.",
+        "high": ["swelling in the legs, ankles, or around the eyes","fatigue and weakness","loss of appetite","nausea and vomiting","confusion and disorientation"],
+        "low": ["swelling","fatigue","slow wound healing", "dry, thin skin", "hair loss", "physician"],
+        "remedy_high": ["peanut butter","almonds","chickpeas","tofu","cottage cheese"],
+        "remedy_low": ["fruits","vegetables","grains","legumes","potatoes","corn","sugar","milk","avocado"]
+    },
+    "albumin": {
+        "information": "Albumin is a type of protein found in the blood and plays a crucial role in regulating fluid balance, transporting hormones and drugs in the bloodstream, and supporting overall immune function.",
+        "high": ["dehydration","liver disease", "physician"],
+        "low": ["swelling","nausea","dark urine","abdominal pain","decreased skin turgor", "physician"],
+        "remedy_high": ["lean protein like chicken, fish, tofu, legumes","limit salt and sugar intake","avoid processed and fried foods"],
+        "remedy_low": ["Eat protein-rich foods like eggs, dairy, meat, poultry, fish","include high-calorie, nutrient-dense foods like nuts, avocados, olive oil","eggs","milk"]
+    },
+    "urea": {
+        "information": "Urea is a waste product produced in the liver from the breakdown of amino acids. It is then excreted from the body through the kidneys in urine.",
+        "high": ["can reduce kidney function","fatigue and weakness","dry mouth and skin","muscle cramps or twitching","swelling in legs, ankles, and feet", "physician"],
+        "low": ["confusion and disorientation", "nausea and vomiting","abdominal pain and swelling","dark urine"],
+        "remedy_high": ["fruits","vegetables","dairy products","grains","beverages"],
+        "remedy_low": ["meat","tofu and soy products","nuts and seeds","beans and legumes"]
+    },
+    "creatinine": {
+        "information": "Creatinine is a waste product produced by muscle metabolism and filtered by the kidneys.",
+        "high": ["swelling in the legs, ankles, and feet","loss of appetite","changes in urine output or color","confusion or disorientation"],
+        "low": ["overhydrated state", "overactive muscle metabolism"],
+        "remedy_high": ["limit or avoid high-protein foods","consume plenty of fluids, such as water and low-sodium broths","limit or avoid high-potassium foods, such as bananas, oranges, potatoes, and tomatoes","limit or avoid high-phosphorus foods"],
+        "remedy_low": ["fruits", "green vegetables"]
+    },
+    "uric_acid": {
+        "information": "Uric acid is a waste product produced by the breakdown of purines, which are found in many foods, such as red meat, poultry, and seafood.",
+        "high": ["joint pain and swelling","kidney stones","stiffness and difficulty moving affected joints","tophi, lumps of uric acid crystals that form under the skin near affected joints"],
+        "low": ["Wilson's disease, a genetic disorder that affects copper metabolism"],
+        "remedy_high": ["limit or avoid high-purine foods","consume low-fat dairy products","choose complex carbohydrates","limit or avoid alcohol"],
+        "remedy_low": ["fruits", "green vegetables", "water", "increase protein diet"]
+    },
+    "calcium": {
+        "information": "Calcium is a crucial mineral for human health, playing a key role in building and maintaining strong bones, regulating muscle contractions, and transmitting nerve impulses.",
+        "high": ["fatigue and weakness","increased thirst","frequent urination","constipation"],
+        "low": ["tingling or numbness in the fingers, toes, and face","poor appetite and weight loss","dry skin and hair","brittle nails"],
+        "remedy_high": ["salty foods","low-fat dairy products","leafy green vegetables","beans and lentils","whole grains"],
+        "remedy_low": ["green vegetables", "consume more diary products","nuts and seeds","fish with soft bones that can be eaten, such as salmon and sardines"]
+    },
+    "phosphorous": {
+        "information": "Phosphorus is a mineral essential to the human body, playing a role in the formation of DNA, cell membranes, and energy storage and transfer through ATP. It is also important for the proper functioning of kidneys, bones, and teeth.",
+        "high": ["weakness and fatigue","bone pain","itching and rashes","loss of appetite"],
+        "low": ["heart problems","breathing difficulties","anemia","muscle weakness, cramps, and twitching"],
+        "remedy_high": ["reduce meaty foods","reduce dairy products","reduce whole grains","reduce nuts and seeds"],
+        "remedy_low": [ "fruits", "vegetables", "whole grains","lean proteins", "meat","poultry","fish"]
+    },
+    "sodium": {
+        "information": "Sodium is an electrolyte that helps regulate fluid balance, maintain blood pressure, and support proper muscle and nerve function in the human body.",
+        "high": ["thirst","headache","seizures","fatigue","swelling","confusion and changes in mental function"],
+        "low": ["nausea and vomiting","unconsciousness","swelling","muscle cramps, spasms, and twitching"],
+        "remedy_high": ["Limiting consumption of processed, packaged, and restaurant foods","herbs, spices, and other seasonings in place of salt to add flavor to your food","fresh fruits", "vegetables", "whole grains","lean proteins"],
+        "remedy_low": ["table salt", "bouillon or broth","soy sauce","meat, poultry, and fish","processed foods, such as canned soups and packaged snacks"]
+    },
+    "potassium": {
+        "information": "Potassium is an essential mineral that plays a vital role in maintaining proper heart and muscle function, as well as fluid balance in the human body.",
+        "high": ["muscle weakness or paralysis","numbness or tingling","breathing difficulties","chest pain","irregular heartbeat or palpitations"],
+        "low": ["confusion or changes in mental function","constipation","muscle weakness or cramps","fatigue"],
+        "remedy_high": ["limit bananas","limit milk and yogurt","limit avocados","limit nuts and seeds","limit spinach and other leafy greens"],
+        "remedy_low": ["spinach and other leafy greens","cantaloupe","prunes and raisins","sweet potatoes","oranges","bananas"]
+    },
+    "chloride": {
+        "information": "Chloride is an important electrolyte in the human body, playing a role in maintaining fluid balance and supporting proper digestion by producing stomach acid. It also helps to regulate the balance of acids and electrolytes in the blood, and works in conjunction with other electrolytes such as sodium and potassium to maintain proper fluid balance and blood pressure.",
+        "high": ["nausea and vomiting","rapid breathing or shortness of breath","muscle weakness or cramps","seizures"],
+        "low": ["rapid heartbeat","dehydration","breathing difficulties","loss of appetite"],
+        "remedy_high": ["reduce processed foods, such as canned soups, processed meats, and cheese","reduce table salt","reduce olives","reduce seaweed and seaweed products"],
+        "remedy_low": ["unsalted nuts and seeds","tofu and tempeh","herbs, spices, and seasonings without added salt","rice, pasta, bread, and cereal","dairy alternatives such as almond milk or soy milk"]
+    },
+    "HbA1c": {
+        "information": "HbA1c (also known as glycated hemoglobin) is a form of hemoglobin that is bound to glucose in the blood. It is commonly used as a marker of average blood sugar levels over the past 2-3 months and is used to diagnose and monitor diabetes and other conditions affecting blood sugar control.",
+        "high": ["increased thirst","slow-healing cuts or wounds","yeast infections","blurred vision"],
+        "low": ["hunger","shakiness","sweating","headaches","dizziness","physician"],
+        "remedy_high": ["green vegetables","brown rice", "whole-grain bread","whole-grain pasta","include lean protein", "avoid sugary foods"],
+        "remedy_low": ["intake sugary foods till it reaches a proper level", "fruits","eat regularly spaced meals","include complex carbohydrates"]
+    },
+    "estimated_average_glucose": {
+        "information": "Estimated Average Glucose (eAG) is a measurement of average blood sugar levels, calculated from HbA1c levels. It provides a rough estimate of average blood glucose levels over the past 2-3 months and is used to monitor diabetes and other conditions affecting blood sugar control.",
+        "high": ["increased thirst","slow healing of cuts and bruises","skin infections","blurred vision"],
+        "low": ["Sweating","Shaking","Hunger","Dizziness","Confusion","Headache"],
+        "remedy_high": ["limit alcohol consumption","fiber-rich carbohydrates","non-starchy vegetables","limit intake of sugary foods and drinks"],
+        "remedy_low": ["leafy green vegetables","non-starchy vegetables","whole grains","avocados"]
+    },
+    "glucose_fasting": {
+        "information": "Fasting glucose is a measurement of the amount of glucose (sugar) in a person's blood after they have gone without food for at least 8 hours. It is used to diagnose and monitor diabetes, as well as to assess a person's overall glucose metabolism.",
+        "high": ["excessive thirst","fatigue","hunger","blurred vision","chances of diabetes"],
+        "low": ["shakiness","Nervousness or irritability","headache","dizziness or lightheadedness"],
+        "remedy_high": ["non-starchy vegetables","high-fiber carbohydrates","lean proteins","low-fat dairy products"],
+        "remedy_low": ["intake sugary foods till it reaches a proper level", "fruits","soda","peanut butter","greek yogurt","hard-boiled eggs"]
+    },
+    "vitamin_b12": {
+        "information": "Vitamin B12 is essential for forming red blood cells and DNA.",
+        "high": [null, null],
+        "low": [null, null],
+        "remedy_high": ["reduce alcohol consumption"],
+        "remedy_low": ["green vegetables", "increase protein diet"]
+    },
+    "vitamin_d": {
+        "information": "Vitamin D is essential for bone growth and healing.",
+        "high": [null, null],
+        "low": [null, "physician"],
+        "remedy_high": ["water"],
+        "remedy_low": ["consume more diary products"]
+    },
+    "vitamin b12 level (serum,cmia)": {
+        "information": "Vitamin B12 is essential for forming red blood cells and DNA.",
+        "high": [null, null],
+        "low": [null, null],
+        "remedy_high": ["reduce alcohol consumption"],
+        "remedy_low": ["green vegetables", "increase protein diet"]
+    },
+    "t3_total": {
+        "information": "Hormones produced by the thyroid.",
+        "high": ["chance of thyroid problems", "physician"],
+        "low": ["chance of thyroid problems", "physician"],
+        "remedy_high": ["reduce junk foods", "reduce fatty foods"],
+        "remedy_low": ["spinach", "tomatoes", "milk"]
+    },
+    "t4_total": {
+        "information": "Hormones produced by the thyroid.",
+        "high": ["chance of thyroid problems", "physician"],
+        "low": ["chance of thyroid problems", "physician"],
+        "remedy_high": ["reduce junk foods", "reduce fatty foods"],
+        "remedy_low": ["spinach", "tomatoes", "milk"]
+    },
+    "tsh": {
+        "information": "TSH regulates hormone production and metabolism throughout the body",
+        "high": ["chance of thyroid problems", "physician"],
+        "low": ["chance of thyroid problems", "physician"],
+        "remedy_high": ["reduce junk foods", "reduce fatty foods"],
+        "remedy_low": ["spinach", "tomatoes", "milk"]
+    },
+    "cholestrol": {
+        "information": "Fat like substance present in the body cells.",
+        "high": ["chance of cholestrol", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+        "remedy_low": ["consume more diary products", "green vegetables"]
+    },
+    "triglycerides": {
+        "information": "Type of fats found in the blood.",
+        "high": ["chance of cholestrol", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+        "remedy_low": ["consume more diary products", "green vegetables"]
+    },
+    "hdl_cholestrol": {
+        "information": "Good cholestrol number",
+        "high": ["chance of cholestrol", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+        "remedy_low": ["consume more diary products", "green vegetables"]
+    },
+    "ldl_cholestrol": {
+        "information": "Bad cholestrol number",
+        "high": ["chance of cholestrol", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+        "remedy_low": ["consume more diary products", "green vegetables"]
+    },
+    "vldl_cholestrol": {
+        "information": "Total cholestrol - Bad cholestrol",
+        "high": ["chance of cholestrol", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+        "remedy_low": ["consume more diary products", "green vegetables"]
+    },
+    "non_hdl_cholestrol": {
+        "information": "Total cholestrol - Good cholestrol",
+        "high": ["chance of cholestrol", "physician"],
+        "low": [null, null],
+        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
+        "remedy_low": ["consume more diary products", "green vegetables"]
+    }, 
+    "mpv (mean platelet volume)": {
+        "information": "Platelets are cells that help your blood clot.",
+        "high": [null, "physician"],
+        "low": ["chances of dengue", "physician"],
+        "remedy_high": ["dark chocolate", "onion", "tomato"],
+        "remedy_low": ["greem vegetables", "avoid alcohol"]
+    }
+}
