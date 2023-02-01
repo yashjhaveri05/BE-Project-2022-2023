@@ -1,5 +1,8 @@
-from transformers import pipeline
-generator = pipeline('text-generation', model = 'gpt2')
-print(generator("Eosinophils': ['high', 1]", max_length = 30, num_return_sequences=3))
-## [{'generated_text': "Hello, I'm a language modeler. So while writing this, when I went out to meet my wife or come home she told me that my"},
-##  {'generated_text': "Hello, I'm a language modeler. I write and maintain software in Python. I love to code, and that includes coding things that require writing"}, ...
+from transformers import GPT2Tokenizer, TFGPT2Model
+
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2-large')
+model = TFGPT2Model.from_pretrained('gpt2-large')
+text = "'eosinophils': {'information': 'Are a part of WBC, help fight allergies', 'high': ['allergy', 'physician'], 'low': ['allergy', 'physician'], 'remedy_high': ['avoid spicy foods', 'avoid aerated drinks'], 'remedy_low': ['consume more diary products']"
+encoded_input = tokenizer(text, return_tensors='tf')
+output = model(encoded_input)
+print(output)

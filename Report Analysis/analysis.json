@@ -1,107 +1,107 @@
 {
     "haemoglobin": {
-        "information": "Protein in your red blood cells that carries oxygen and carbon dioxide.",
+        "information": "Haemoglobin is a protein in red blood cells that carries oxygen and carbon dioxide throughout the body.",
         "high": [null, "physician"],
-        "low": [null, null],
+        "low": ["anemia", null],
         "remedy_high": ["avoid alcohol"],
-        "remedy_low": ["almonds", "walnuts", "dates"]
+        "remedy_low": ["almonds", "walnuts", "dates", "leafy greens", "iron supplements"]
     },
     "rbc_count": {
-        "information": "Red blood cells carry oxygen from your lungs to every cell in your body.",
-        "high": [null, "physician"],
-        "low": [null, "physician"],
-        "remedy_high": ["exercise", "avoid meaty foods"],
-        "remedy_low": ["leafy vegetables"]
+        "information": "Red Blood Cells carry oxygen from your lungs to every cell in your body. RBC count determines the amount of oxygen-carrying capacity in the blood.",
+        "high": ["increases risk of blood clots", "physician"],
+        "low": ["anemia", "physician"],
+        "remedy_high": ["exercise", "avoid meaty foods", "avoid alcohol"],
+        "remedy_low": ["leafy greens", "iron supplements"]
     },
     "total_leukocyte_count": {
-        "information": "Total count of WBC in the body and help fight infections.",
-        "high": ["infection", "physician"],
-        "low": ["infection", "physician"],
-        "remedy_high": ["reduce stress"],
-        "remedy_low": ["practise good hygiene"]
+        "information": "Leukocytes or White Blood Cells play a crucial role in the body's immune system and help fight infections, diseases, and foreign substances in the body.",
+        "high": ["infection or inflammation", "physician"],
+        "low": ["infection or bone marrow damage", "physician"],
+        "remedy_high": ["reduce stress", "adequate rest"],
+        "remedy_low": ["practice good hygiene", "adequate rest and reducing stress", "improving overall nutrition and eating a balanced diet"]
     },
     "lymphocytes": {
-        "information": "Are a part of WBC, help fight infection",
+        "information": "Lymphocytes are a part of WBC that help to destroy cells infected with viruses or cancer cells and produce antibodies that help to fight bacteria, viruses, and other foreign substances in the body.",
         "high": ["infection", "physician"],
-        "low": ["infection", "physician"],
+        "low": ["infection or weakened immune system", "physician"],
         "remedy_high": [null],
-        "remedy_low": ["excerise", "prevent smoking"]
+        "remedy_low": ["exercise", "prevent smoking", "adequate rest and reducing stress", "improving overall nutrition and eating a balanced diet"]
     },
     "monocytes": {
-        "information": "Are a part of WBC, help fight infection",
+        "information": "Monocytes are the largest type of WBC that are important for fighting infections, removing dead cells, and presenting foreign substances to other immune cells for destruction.",
         "high": ["infection", "physician"],
         "low": ["infection", "physician"],
         "remedy_high": ["exercise", "avoid meaty foods"],
-        "remedy_low": ["excerise", "prevent smoking"]
+        "remedy_low": ["exercise", "prevent smoking", "adequate rest and reducing stress", "improving overall nutrition and eating a balanced diet"]
     },
     "eosinophils": {
-        "information": "Are a part of WBC, help fight allergies",
+        "information": "Eosinophils are a part of WBC that fight allergies, parasites, asthma, and certain skin conditions.",
         "high": ["allergy", "physician"],
-        "low": ["allergy", "physician"],
+        "low": ["allergy, viral infections, certain medications, or autoimmune disorders", "physician"],
         "remedy_high": ["avoid spicy foods", "avoid aerated drinks"],
         "remedy_low": ["consume more diary products"]
     },
     "basophils": {
-        "information": "Are a part of WBC, help fight infection",
+        "information": "Basophils are a part of WBC that fight allergies and parasites",
         "high": ["infection", "physician"],
-        "low": ["infection", "physician"],
+        "low": ["viral infections, certain medications, or autoimmune disorders", "physician"],
         "remedy_high": ["avoid sugary foods"],
         "remedy_low": ["intake more protein"]
     },
     "platelet_count": {
-        "information": "Platelets are cells that help your blood clot.",
+        "information": "Platelets are cells that help in blood clotting and repair damaged blood vessels.",
         "high": [null, "physician"],
         "low": ["chances of dengue", "physician"],
         "remedy_high": ["dark chocolate", "onion", "tomato"],
         "remedy_low": ["greem vegetables", "avoid alcohol"]
     },
     "mean_platelet_volume": {
-        "information": "Average size of your platelets",
+        "information": "Platelets are cells that help in blood clotting and repair damaged blood vessels. Mean platelet volume refers to the average size of your platelets",
         "high": [null, "physician"],
         "low": ["chances of dengue", "physician"],
         "remedy_high": ["dark chocolate", "onion", "tomato"],
         "remedy_low": ["green vegetables", "avoid alcohol"]
     },
     "bilirubin_total": {
-        "information": "Bilirubin in bile helpds digest food.",
-        "high": ["chance of jaundice", "physician"],
+        "information": "Bilirubin is produced by the breakdown of red blood cells and helps digest food.",
+        "high": ["chance of jaundice or liver disease", "physician"],
         "low": [null, "physician"],
         "remedy_high": ["water", "avoid alcohol"],
         "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
     },
     "bilirubin_direct": {
-        "information": "Bilirubin in bile helpds digest food.",
-        "high": ["chance of jaundice", "physician"],
+        "information": "Bilirubin is produced by the breakdown of red blood cells and helps digest food.",
+        "high": ["chance of jaundice or liver disease", "physician"],
         "low": [null, "physician"],
         "remedy_high": ["water", "avoid alcohol"],
         "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
     },
     "bilirubin_indirect": {
-        "information": "Bilirubin in bile helpds digest food.",
-        "high": ["chance of jaundice", "physician"],
+        "information": "Bilirubin is produced by the breakdown of red blood cells and helps digest food.",
+        "high": ["chance of jaundice or liver disease", "physician"],
         "low": [null, "physician"],
         "remedy_high": ["water", "avoid alcohol"],
         "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
     },
     "ast": {
-        "information": "AST is a protein made by liver cells.",
-        "high": ["chance of jaundice or fatty liver", "physician"],
+        "information": "AST is a protein made by liver cells. AST levels in the blood can provide important information about liver function and can be used as a marker for liver damage or disease.",
+        "high": ["chance of liver disease, viral hepatitis, liver injury, jaundice or fatty liver", "physician"],
         "low": [null, "physician"],
         "remedy_high": ["exercise", "drink coffee"],
         "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
     },
     "alt": {
         "information": "ALT is a protein made by liver cells.",
-        "high": ["chance of jaundice or fatty liver", "physician"],
+        "high": ["chance of viral hepatitis, liver injury, liver cirrhosis, jaundice or fatty liver", "physician"],
         "low": [null, "physician"],
         "remedy_high": ["exercise", "drink coffee"],
         "remedy_low": ["fruits", "green vegetables", "avoid alcohol"]
     },
     "alkaline_phosphatase": {
         "information": "Alkaline Phosphatase is a protein found in all body tissues",
-        "high": [null, null],
+        "high": ["chances of liver disease, bone disorders, or cancer", null],
         "low": [null, null],
-        "remedy_high": ["corn", "coconut", "sea foods"],
+        "remedy_high": ["corn", "coconut", "sea foods", "avoiding alcohol"],
         "remedy_low": ["yogurt", "almonds", "meat"]
     },
     "total_protein": {
