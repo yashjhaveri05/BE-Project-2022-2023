@@ -69,7 +69,7 @@ def getAnalysis(output, report_list, priority_list):
   print("Final list of all: ", final_dict)
   print("Highest priority: ", high_priority_dict)
 
-getAnalysis(output, report_list, priority_list)
+# getAnalysis(output, report_list, priority_list)
 
 # def getPriorityValue(word):
 #   for key in priority_list:
@@ -120,3 +120,32 @@ getAnalysis(output, report_list, priority_list)
 
 # result_list = getPriority(output)
 # getAnalysis(result_list, output)
+
+def longestCommonSubstring(X, Y, m, n): 
+  LongestCommonArray = [[0 for k in range(n+1)] for l in range(m+1)]  
+  result = 0
+  for i in range(m + 1):
+      for j in range(n + 1):
+          if (i == 0 or j == 0):
+              LongestCommonArray[i][j] = 0
+          elif (X[i-1] == Y[j-1]):
+              LongestCommonArray[i][j] = LongestCommonArray[i-1][j-1] + 1
+              result = max(result, LongestCommonArray[i][j])
+          else:
+              LongestCommonArray[i][j] = 0
+  return result
+
+def findString(Y):
+  report_list_keys = report_list.keys()
+  res = 0
+  res_string = ""
+  for i in report_list_keys:
+    m = len(i)
+    n = len(Y)
+    temp = longestCommonSubstring(i, Y, m, n)
+    if (res < temp):
+      res = temp
+      res_string = i
+  print(res, res_string)
+  
+findString("lymphocytes")
