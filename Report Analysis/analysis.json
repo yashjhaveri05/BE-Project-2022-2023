@@ -196,94 +196,87 @@
         "remedy_low": ["intake sugary foods till it reaches a proper level", "fruits","soda","peanut butter","greek yogurt","hard-boiled eggs"]
     },
     "vitamin_b12": {
-        "information": "Vitamin B12 is essential for forming red blood cells and DNA.",
-        "high": [null, null],
-        "low": [null, null],
-        "remedy_high": ["reduce alcohol consumption"],
-        "remedy_low": ["green vegetables", "increase protein diet"]
+        "information": "Vitamin B12 is an essential nutrient that plays a crucial role in the production of red blood cells, DNA synthesis, and proper brain function.",
+        "high": [null, "physician"],
+        "low": ["chances of anemia", "physician"],
+        "remedy_high": ["reduce alcohol consumption", "reduce the intake of B12-rich foods"],
+        "remedy_low": ["green vegetables", "increase protein diet", "increase the intake of B12-rich foods"]
     },
     "vitamin_d": {
-        "information": "Vitamin D is essential for bone growth and healing.",
-        "high": [null, null],
-        "low": [null, "physician"],
-        "remedy_high": ["water"],
-        "remedy_low": ["consume more diary products"]
-    },
-    "vitamin b12 level (serum,cmia)": {
-        "information": "Vitamin B12 is essential for forming red blood cells and DNA.",
-        "high": [null, null],
-        "low": [null, null],
-        "remedy_high": ["reduce alcohol consumption"],
-        "remedy_low": ["green vegetables", "increase protein diet"]
+        "information": "Vitamin D is a fat-soluble vitamin that is essential for proper bone health, as it helps the body absorb and use calcium. ",
+        "high": [null, "physician"],
+        "low": ["chances of osteomalacia in adults and rickets in children", "physician"],
+        "remedy_high": ["water", "reduce the intake of Vitamin D-rich foods"],
+        "remedy_low": ["consume more diary products", "increase the intake of Vitamin D-rich foods"]
     },
     "t3_total": {
-        "information": "Hormones produced by the thyroid.",
-        "high": ["chance of thyroid problems", "physician"],
-        "low": ["chance of thyroid problems", "physician"],
-        "remedy_high": ["reduce junk foods", "reduce fatty foods"],
-        "remedy_low": ["spinach", "tomatoes", "milk"]
+        "information": "T3 is one of the hormones produced by the thyroid and plays a crucial role in regulating metabolism, as well as heart rate, body temperature, and other important physiological processes.",
+        "high": ["chance of hyperthyroidism", "physician"],
+        "low": ["chance of hypothyroidism", "physician"],
+        "remedy_high": ["reduce junk foods", "reduce fatty foods", "avoid foods high in iodine like seafood and diary products", "increase the intake of selenium-rich foods like nuts"],
+        "remedy_low": ["spinach", "tomatoes", "milk", "fruits", "avoid goitrogens like brocolli", "increase the intake of selenium-rich foods like nuts"]
     },
     "t4_total": {
-        "information": "Hormones produced by the thyroid.",
-        "high": ["chance of thyroid problems", "physician"],
-        "low": ["chance of thyroid problems", "physician"],
-        "remedy_high": ["reduce junk foods", "reduce fatty foods"],
-        "remedy_low": ["spinach", "tomatoes", "milk"]
+        "information": "T4 is one of the hormones produced by the thyroid and is involved in regulating the body's metabolism and energy levels.",
+        "high": ["chance of hyperthyroidis", "physician"],
+        "low": ["chance of hypothyroidism", "physician"],
+        "remedy_high": ["reduce junk foods", "reduce fatty foods", "avoid foods high in iodine like seafood and diary products", "increase the intake of selenium-rich foods like nuts"],
+        "remedy_low": ["spinach", "tomatoes", "milk", "fruits", "avoid goitrogens like brocolli", "increase the intake of selenium-rich foods like nuts"]
     },
     "tsh": {
-        "information": "TSH regulates hormone production and metabolism throughout the body",
-        "high": ["chance of thyroid problems", "physician"],
-        "low": ["chance of thyroid problems", "physician"],
-        "remedy_high": ["reduce junk foods", "reduce fatty foods"],
-        "remedy_low": ["spinach", "tomatoes", "milk"]
+        "information": "TSH is a hormone produced by the pituitary gland that regulates the function of the thyroid gland.",
+        "high": ["chance of hyperthyroidism", "physician"],
+        "low": ["chance of hypothyroidism", "physician"],
+        "remedy_high": ["reduce junk foods", "reduce fatty foods", "avoid foods high in iodine like seafood and diary products", "increase the intake of selenium-rich foods like nuts"],
+        "remedy_low": ["spinach", "tomatoes", "milk", "fruits", "avoid goitrogens like brocolli", "increase the intake of selenium-rich foods like nuts"]
     },
     "cholestrol": {
-        "information": "Fat like substance present in the body cells.",
-        "high": ["chance of cholestrol", "physician"],
-        "low": [null, null],
-        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
-        "remedy_low": ["consume more diary products", "green vegetables"]
+        "information": "Fat like substance present in the body cells which is a component of cell membranes and a precursor to hormones.",
+        "high": ["increased chances of heart diseases", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["reduce oily food consumption", "reduce butter", "ghee intake", "increase in physical activities", "lose weight if necessary"],
+        "remedy_low": ["consume more diary products", "green vegetables", "reduce stress"]
     },
     "triglycerides": {
-        "information": "Type of fats found in the blood.",
-        "high": ["chance of cholestrol", "physician"],
-        "low": [null, null],
-        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
-        "remedy_low": ["consume more diary products", "green vegetables"]
+        "information": "Type of fats found in the blood and an important source of energy.",
+        "high": ["increased chances of heart diseases", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["reduce oily food consumption", "reduce butter", "ghee intake", "increase in physical activities", "lose weight if necessary"],
+        "remedy_low": ["consume more diary products", "green vegetables", "reduce stress"]
     },
     "hdl_cholestrol": {
         "information": "Good cholestrol number",
-        "high": ["chance of cholestrol", "physician"],
-        "low": [null, null],
-        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
-        "remedy_low": ["consume more diary products", "green vegetables"]
+        "high": ["increased chances of heart diseases", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["reduce oily food consumption", "reduce butter", "ghee intake", "increase in physical activities", "lose weight if necessary"],
+        "remedy_low": ["consume more diary products", "green vegetables", "reduce stress"]
     },
     "ldl_cholestrol": {
         "information": "Bad cholestrol number",
-        "high": ["chance of cholestrol", "physician"],
-        "low": [null, null],
-        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
-        "remedy_low": ["consume more diary products", "green vegetables"]
+        "high": ["increased chances of heart diseases", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["reduce oily food consumption", "reduce butter", "ghee intake", "increase in physical activities", "lose weight if necessary"],
+        "remedy_low": ["consume more diary products", "green vegetables", "reduce stress"]
     },
     "vldl_cholestrol": {
         "information": "Total cholestrol - Bad cholestrol",
-        "high": ["chance of cholestrol", "physician"],
-        "low": [null, null],
-        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
-        "remedy_low": ["consume more diary products", "green vegetables"]
+        "high": ["increased chances of heart diseases", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["reduce oily food consumption", "reduce butter", "ghee intake", "increase in physical activities", "lose weight if necessary"],
+        "remedy_low": ["consume more diary products", "green vegetables", "reduce stress"]
     },
     "non_hdl_cholestrol": {
         "information": "Total cholestrol - Good cholestrol",
-        "high": ["chance of cholestrol", "physician"],
-        "low": [null, null],
-        "remedy_high": ["reduce oily food consumption", "reduce butter, ghee intake"],
-        "remedy_low": ["consume more diary products", "green vegetables"]
+        "high": ["increased chances of heart diseases", "physician"],
+        "low": [null, "physician"],
+        "remedy_high": ["reduce oily food consumption", "reduce butter", "ghee intake", "increase in physical activities", "lose weight if necessary"],
+        "remedy_low": ["consume more diary products", "green vegetables", "reduce stress"]
     }, 
-    "mpv (mean platelet volume)": {
-        "information": "Platelets are cells that help your blood clot.",
+    "mean platelet volume": {
+        "information": "Platelets are tiny cells in your blood that play a crucial role in controlling bleeding. ",
         "high": [null, "physician"],
-        "low": ["chances of dengue", "physician"],
-        "remedy_high": ["dark chocolate", "onion", "tomato"],
-        "remedy_low": ["greem vegetables", "avoid alcohol"]
+        "low": ["chances of infection", "physician"],
+        "remedy_high": ["dark chocolate", "onion", "tomato", "increase in physical activities", "quit smoking"],
+        "remedy_low": ["green vegetables", "avoid alcohol", "take vitamin supplements"]
     }
 }
