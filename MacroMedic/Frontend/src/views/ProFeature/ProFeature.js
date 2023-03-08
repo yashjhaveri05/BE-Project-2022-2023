@@ -110,6 +110,7 @@ export default function ProFeature() {
     BloodPressure:0
     })
     const [report,setReport]=React.useState(null);
+    const [submitted,setSubmitted]=React.useState(false);
 
   
 
@@ -155,6 +156,7 @@ export default function ProFeature() {
                 onChange={async (e) => {
                   setReport(e.target.files[0]);
                   console.log(report);
+                  //write api to send report 
                 //   await api.uploadImage(userData._id, e.target.files[0]);
                 }}
               /></>
@@ -251,11 +253,23 @@ export default function ProFeature() {
 
   const handleSubmit=()=>{
     console.log("Code to extract summary")
+    setSubmitted(true);
+    // write api for summary
   }
   return (
     <>
       <Card>
-        <CardHeader color="warning">
+        {submitted?(<>
+          <CardHeader color="warning">
+          <h4 className={classes.cardTitleWhite}>
+            Summary of the report generated
+          </h4>
+        </CardHeader>
+        <CardBody>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </CardBody>
+        </>):(<>
+          <CardHeader color="warning">
           <h4 className={classes.cardTitleWhite}>
             Get information about medical report
           </h4>
@@ -331,7 +345,8 @@ export default function ProFeature() {
               </div>
             </StyledGridItem>
           </GridContainer>
-        </CardBody>
+        </CardBody></>)}
+       
       </Card>
 
       
