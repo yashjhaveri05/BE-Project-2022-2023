@@ -1,6 +1,15 @@
 import pandas as pd
 import numpy as np
 import json
+import openai
+
+def toString(s): 
+    string = "" 
+    for element in s:
+        string += element.capitalize() 
+        if (element != s[len(s) - 1]):
+          string += ", "
+    return string
 
 # report = pd.read_csv('output.csv')
 # report = report.fillna(-1)
@@ -46,10 +55,15 @@ g = open('../Report Analysis/priority.json')
 priority_list = json.load(g)
 g.close()
 
-output = {'eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0],  'Glucose_fasting': ['high', 1]}
-output = dict((k.lower(), v) for k, v in output.items()) 
+output = {'Eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0], 'Vitamin B12 level (Serum,CMIA)': ['low', 0]}
+# output = dict((k.lower(), v) for k, v in output.items()) 
 
 def getAnalysis(output, report_list, priority_list):
+  result_list = list(output.keys())
+  for i in result_list:
+     temp = findString(i)
+     output[temp] = output[i]
+     del output[i]
   result_list = list(output.keys())
   final_dict = {}
   high_priority_dict = {}
@@ -66,8 +80,59 @@ def getAnalysis(output, report_list, priority_list):
         high_priority_dict[i] = rep_list
       elif priority['priority'] == high_pri:
         high_priority_dict[i] = rep_list
-  print("Final list of all: ", final_dict)
-  print("Highest priority: ", high_priority_dict)
+
+  high = []
+  low = []
+  for i in result_list:
+      if (output.get(i)[0] == "high"):
+         high.append(i)
+      else:
+         low.append(i)
+  if (high):
+    print("High Values: ", toString(high))
+  if (low): 
+    print("Low Values: ", toString(low))
+  temp = output.get(list(high_priority_dict.keys())[0])[0]
+  print("You should visit a", report_list.get(list(high_priority_dict.keys())[0])[temp][1], ", you have chances of", report_list.get(list(high_priority_dict.keys())[0])[temp][0])
+  for i in list(high_priority_dict.keys()):
+     generate(i, report_list, output.get(i)[0])
+     del output[i]
+  for i in list(output.keys()):
+     generate(i, report_list, output.get(i)[0])
+  # print("Final list of all: ", final_dict)
+  # print("Highest priority: ", high_priority_dict)
+
+def generate(elem, report_list, val):
+  # print("\n", elem.upper())
+  req_dict = report_list.get(elem)
+  # print(req_dict["information"])
+  # print(textGenerate("Write a note on " + elem))
+  # print(textGenerate("Ill effects of having " + val + " values of " + elem))
+  temp = req_dict["remedy_"+val]
+  # print("Home remedies to be taken are: ", toString(temp))
+  # print(textGenerate("Remedies that can be taken to cure "+ val + " values of " + elem))
+  fin = {}
+  fin["elem"] = elem
+  fin["intro1"] = req_dict["information"]
+  fin["intro2"] = textGenerate("Write a note on " + elem)
+  fin["effects"] = textGenerate("Ill effects of having " + val + " values of " + elem)
+  fin["rem1"] = "Home remedies to be taken are: " + toString(temp)
+  fin["rem2"] = textGenerate("Remedies that can be taken to cure "+ val + " values of " + elem)
+  print(fin)
+
+def textGenerate(prompt):
+  openai.api_key = "##"
+  model_engine = "text-davinci-002"
+  completion = openai.Completion.create(
+    engine = model_engine,
+    prompt = prompt,
+    max_tokens = 1024,
+    n=1,
+    stop = None,
+    temperature = 0.9,
+  )
+  response = completion.choices[0].text.lstrip()
+  return response
 
 # getAnalysis(output, report_list, priority_list)
 
@@ -146,6 +211,7 @@ def findString(Y):
     if (res < temp):
       res = temp
       res_string = i
-  print(res, res_string)
+  return res_string
   
 findString("lymphocytes")
+getAnalysis(output, report_list, priority_list)

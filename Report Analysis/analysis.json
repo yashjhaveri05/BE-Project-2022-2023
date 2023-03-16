@@ -59,8 +59,8 @@
         "information": "Platelets are cells that help in blood clotting and repair damaged blood vessels. Mean platelet volume refers to the average size of your platelets",
         "high": [null, "physician"],
         "low": ["chances of dengue", "physician"],
-        "remedy_high": ["dark chocolate", "onion", "tomato"],
-        "remedy_low": ["green vegetables", "avoid alcohol"]
+        "remedy_high": ["dark chocolate", "onion", "tomato", "increase in physical activities", "quit smoking"],
+        "remedy_low": ["green vegetables", "avoid alcohol", "take vitamin supplements"]
     },
     "bilirubin_total": {
         "information": "Bilirubin is produced by the breakdown of red blood cells and helps digest food.",
@@ -271,12 +271,5 @@
         "low": [null, "physician"],
         "remedy_high": ["reduce oily food consumption", "reduce butter", "ghee intake", "increase in physical activities", "lose weight if necessary"],
         "remedy_low": ["consume more diary products", "green vegetables", "reduce stress"]
-    }, 
-    "mean platelet volume": {
-        "information": "Platelets are tiny cells in your blood that play a crucial role in controlling bleeding. ",
-        "high": [null, "physician"],
-        "low": ["chances of infection", "physician"],
-        "remedy_high": ["dark chocolate", "onion", "tomato", "increase in physical activities", "quit smoking"],
-        "remedy_low": ["green vegetables", "avoid alcohol", "take vitamin supplements"]
     }
 }

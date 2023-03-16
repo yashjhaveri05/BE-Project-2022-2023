@@ -5,6 +5,8 @@ import sys
 from dotenv import load_dotenv
 import pandas as pd
 import pypdfium2 as pdfium
+import numpy as np
+import openai
 
 load_dotenv()
 
@@ -175,54 +177,47 @@ def analysis(df):
             anomalies[parameter] = vals
     return anomalies
 
-# def getPriorityValue(word, priority_list):
-#   for key in priority_list:
-#     if word == key:
-#       return priority_list.get(key).get('priority')
-#   for i in priority_list.keys():
-#     if type(priority_list.get(i)) == list:
-#       sub_list = priority_list.get(i)[0]
-#       for key in sub_list:
-#         if word == key:
-#           return sub_list.get(key).get('priority')
-#   return 6
+def toString(s): 
+    string = "" 
+    for element in s:
+        string += element.capitalize() 
+        if (element != s[len(s) - 1]):
+          string += ", "
+    return string
 
-# def getPriority(output, priority_list):
-#   key_dict = list(output.keys())
-#   final_list = []
-#   final_priority = 5
-#   for i in key_dict:
-#     val = getPriorityValue(i, priority_list)
-#     print(final_list)
-#     if val < final_priority:
-#       final_priority = val
-#       final_list.clear()
-#       final_list.append(i)
-#     elif val == final_priority:
-#       final_list.append(i)
-#   return final_list
+def longestCommonSubstring(X, Y, m, n): 
+  LongestCommonArray = [[0 for k in range(n+1)] for l in range(m+1)]  
+  result = 0
+  for i in range(m + 1):
+      for j in range(n + 1):
+          if (i == 0 or j == 0):
+              LongestCommonArray[i][j] = 0
+          elif (X[i-1] == Y[j-1]):
+              LongestCommonArray[i][j] = LongestCommonArray[i-1][j-1] + 1
+              result = max(result, LongestCommonArray[i][j])
+          else:
+              LongestCommonArray[i][j] = 0
+  return result
 
-# def getAnalysis(result_list, output, report_list):
-#   for i in result_list:
-#     rep_list = report_list.get(i)
-#     if rep_list == None:
-#       for j in report_list.keys():
-#         if type(report_list.get(j)) == list:
-#           sub_list = report_list.get(j)[0]
-#           for key in sub_list:
-#             if i == key:
-#               rep_list = sub_list.get(key)
-#     print(rep_list)
-#     output_value = output.get(i)
-#     output_list = rep_list.get(output_value[0])
-#     output_remedy = rep_list.get("remedy_" + output_value[0])
-#     if output_value[1] == 1:
-#       print("you need to visit a " + output_list[1])
-#     if output_list[0]:
-#       print(output_list[0])
-#     print("Remedy: ", output_remedy)
+def findString(Y):
+  report_list_keys = report_list.keys()
+  res = 0
+  res_string = ""
+  for i in report_list_keys:
+    m = len(i)
+    n = len(Y)
+    temp = longestCommonSubstring(i, Y, m, n)
+    if (res < temp):
+      res = temp
+      res_string = i
+  return res_string
 
 def getAnalysis(output, report_list, priority_list):
+  result_list = list(output.keys())
+  for i in result_list:
+     temp = findString(i)
+     output[temp] = output[i]
+     del output[i]
   result_list = list(output.keys())
   final_dict = {}
   high_priority_dict = {}
@@ -239,8 +234,59 @@ def getAnalysis(output, report_list, priority_list):
         high_priority_dict[i] = rep_list
       elif priority['priority'] == high_pri:
         high_priority_dict[i] = rep_list
-  print(final_dict)
-  print(high_priority_dict)
+
+  high = []
+  low = []
+  for i in result_list:
+      if (output.get(i)[0] == "high"):
+         high.append(i)
+      else:
+         low.append(i)
+  if (high):
+    print("High Values: ", toString(high))
+  if (low): 
+    print("Low Values: ", toString(low))
+  temp = output.get(list(high_priority_dict.keys())[0])[0]
+  print("You should visit a", report_list.get(list(high_priority_dict.keys())[0])[temp][1], ", you have chances of", report_list.get(list(high_priority_dict.keys())[0])[temp][0])
+  for i in list(high_priority_dict.keys()):
+     generate(i, report_list, output.get(i)[0])
+     del output[i]
+  for i in list(output.keys()):
+     generate(i, report_list, output.get(i)[0])
+  # print("Final list of all: ", final_dict)
+  # print("Highest priority: ", high_priority_dict)
+
+def generate(elem, report_list, val):
+  # print("\n", elem.upper())
+  req_dict = report_list.get(elem)
+  # print(req_dict["information"])
+  # print(textGenerate("Write a note on " + elem))
+  # print(textGenerate("Ill effects of having " + val + " values of " + elem))
+  temp = req_dict["remedy_"+val]
+  # print("Home remedies to be taken are: ", toString(temp))
+  # print(textGenerate("Remedies that can be taken to cure "+ val + " values of " + elem))
+  fin = {}
+  fin["elem"] = elem
+  fin["intro1"] = req_dict["information"]
+  fin["intro2"] = textGenerate("Write a note on " + elem)
+  fin["effects"] = textGenerate("Ill effects of having " + val + " values of " + elem)
+  fin["rem1"] = "Home remedies to be taken are: " + toString(temp)
+  fin["rem2"] = textGenerate("Remedies that can be taken to cure "+ val + " values of " + elem)
+  print(fin)
+
+def textGenerate(prompt):
+  openai.api_key = "##"
+  model_engine = "text-davinci-002"
+  completion = openai.Completion.create(
+    engine = model_engine,
+    prompt = prompt,
+    max_tokens = 1024,
+    n=1,
+    stop = None,
+    temperature = 0.9,
+  )
+  response = completion.choices[0].text.lstrip()
+  return response
 
 def convertpdf2image(file_name):
     pdf = pdfium.PdfDocument(file_name)
