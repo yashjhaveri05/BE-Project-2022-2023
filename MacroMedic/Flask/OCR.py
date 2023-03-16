@@ -40,7 +40,7 @@ def get_text(result, blocks_map):
                         text += word['Text'] + ' '
                     if word['BlockType'] == 'SELECTION_ELEMENT':
                         if word['SelectionStatus'] =='SELECTED':
-                            text +=  'X '    
+                            text +=  'X '
     return text
 
 
@@ -50,15 +50,12 @@ def get_table_csv_results(file_name):
         img_test = file.read()
         bytes_test = bytearray(img_test)
 
-    # process using image bytes
-    # get the results
     client = boto3.client('textract', aws_access_key_id = AWSAccessKeyId,
             aws_secret_access_key = AWSSecretKey, 
             region_name = 'ap-south-1')
 
     response = client.analyze_document(Document={'Bytes': bytes_test}, FeatureTypes=['TABLES'])
 
-    # Get the text blocks
     blocks=response['Blocks']
 
     blocks_map = {}
@@ -269,25 +266,21 @@ def main(file_name):
         else:
             df = df.append(table_csv, ignore_index = True)
         os.remove(images[i])
-    print(df)
+    df.to_csv("test.csv")
     anomalies = analysis(df)
-    print(anomalies)
-    # #Sample Output:
-    # # output = {'Eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0], 'Vitamin B12 level (Serum,CMIA)': ['low', 0]}
+    print(anomalies) # output = {'Eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0], 'Vitamin B12 level (Serum,CMIA)': ['low', 0]}
     output = dict((k.lower(), v) for k, v in anomalies.items()) 
     f = open('../../Report Analysis/analysis.json')
     report_list = json.load(f)
-    # # print(report_list)
     f.close()
     g = open('../../Report Analysis/priority.json')
     priority_list = json.load(g)
-    # # print(priority_list)
     g.close()
 
     # result_list = getPriority(output, priority_list)
     # getAnalysis(result_list, output, report_list)
 
-    getAnalysis(output, report_list, priority_list)
+    # getAnalysis(output, report_list, priority_list)
 
 if __name__ == "__main__":
     file_name = sys.argv[1]
