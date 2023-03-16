@@ -23,18 +23,21 @@
 # print("It is recommended to consume " + report_list['glucose_fasting']['remedy_high'][0] + "," + report_list['glucose_fasting']['remedy_high'][1] + "," + report_list['glucose_fasting']['remedy_high'][2] + " and " + report_list['glucose_fasting']['remedy_high'][3] + ".")
 # print()
 output = {'Eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0], 'Vitamin B12 level (Serum,CMIA)': ['low', 0]}
-anomalies = list(output)
-start = "From the report, it is observed that "
-i = 0
-for k,v in output.items():
-    start += str(k)
-    start += " is "
-    start += str(v[0])
-    if i == len(output) - 2:
-        start += " and "
-    elif i == len(output) - 1:
-        start += "."
-    else:
-        start += ", "
-    i+=1
-print(start)
+
+def getStart(output):
+    start = "From the report, it is observed that "
+    i = 0
+    for k,v in output.items():
+        start += str(k)
+        start += " is "
+        start += str(v[0])
+        if i == len(output) - 2:
+            start += " and "
+        elif i == len(output) - 1:
+            start += "."
+        else:
+            start += ", "
+        i+=1
+    return start
+
+print(getStart(output))

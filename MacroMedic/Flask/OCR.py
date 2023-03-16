@@ -8,11 +8,21 @@ import pypdfium2 as pdfium
 import numpy as np
 import openai
 
+#Loading Environmental Variables
 load_dotenv()
-
 AWSSecretKey = os.getenv('AWSSecretKey')
 AWSAccessKeyId = os.getenv('AWSAccessKeyId')
+OPENAIKEY = os.getenv('OPENAIKEY')
 
+#Loading Prepared Medical Dictionary and Priority List
+f = open('../../Report Analysis/analysis.json')
+report_list = json.load(f)
+f.close()
+g = open('../../Report Analysis/priority.json')
+priority_list = json.load(g)
+g.close()
+
+# OCR Function 1
 def get_rows_columns_map(table_result, blocks_map):
     rows = {}
     for relationship in table_result['Relationships']:
@@ -23,14 +33,11 @@ def get_rows_columns_map(table_result, blocks_map):
                     row_index = cell['RowIndex']
                     col_index = cell['ColumnIndex']
                     if row_index not in rows:
-                        # create new row
                         rows[row_index] = {}
-                        
-                    # get the text value
                     rows[row_index][col_index] = get_text(cell, blocks_map)
     return rows
 
-
+# OCR Function 2
 def get_text(result, blocks_map):
     text = ''
     if 'Relationships' in result:
@@ -45,40 +52,32 @@ def get_text(result, blocks_map):
                             text +=  'X '
     return text
 
-
+# OCR Function 3
 def get_table_csv_results(file_name):
-
     with open(file_name, 'rb') as file:
         img_test = file.read()
         bytes_test = bytearray(img_test)
-
     client = boto3.client('textract', aws_access_key_id = AWSAccessKeyId,
             aws_secret_access_key = AWSSecretKey, 
             region_name = 'ap-south-1')
-
     response = client.analyze_document(Document={'Bytes': bytes_test}, FeatureTypes=['TABLES'])
-
     blocks=response['Blocks']
-
     blocks_map = {}
     table_blocks = []
     for block in blocks:
         blocks_map[block['Id']] = block
         if block['BlockType'] == "TABLE":
             table_blocks.append(block)
-
     if len(table_blocks) <= 0:
         return "<b> NO Table FOUND </b>"
-
     csv = ''
     for index, table in enumerate(table_blocks):
         csv = generate_table_csv(table, blocks_map, index +1)
-
     return csv
 
+# OCR Function 4
 def generate_table_csv(table_result, blocks_map, table_index):
     rows = get_rows_columns_map(table_result, blocks_map)
-
     columns = []
     entity = []
     obs = []
@@ -130,10 +129,10 @@ def generate_table_csv(table_result, blocks_map, table_index):
         else:
             data = {}
             break
-            
     df = pd.DataFrame(data)
     return df
 
+# Extracting abnormal parameters
 def analysis(df):
     anomalies = {}
     columns = df.columns
@@ -174,6 +173,7 @@ def analysis(df):
             anomalies[parameter] = vals
     return anomalies
 
+#String Method
 def toString(s): 
     string = "" 
     for element in s:
@@ -182,109 +182,130 @@ def toString(s):
           string += ", "
     return string
 
+#String Matching
 def longestCommonSubstring(X, Y, m, n): 
-  LongestCommonArray = [[0 for k in range(n+1)] for l in range(m+1)]  
-  result = 0
-  for i in range(m + 1):
-      for j in range(n + 1):
-          if (i == 0 or j == 0):
-              LongestCommonArray[i][j] = 0
-          elif (X[i-1] == Y[j-1]):
-              LongestCommonArray[i][j] = LongestCommonArray[i-1][j-1] + 1
-              result = max(result, LongestCommonArray[i][j])
-          else:
-              LongestCommonArray[i][j] = 0
-  return result
+    LongestCommonArray = [[0 for k in range(n+1)] for l in range(m+1)]  
+    result = 0
+    for i in range(m + 1):
+        for j in range(n + 1):
+            if (i == 0 or j == 0):
+                LongestCommonArray[i][j] = 0
+            elif (X[i-1] == Y[j-1]):
+                LongestCommonArray[i][j] = LongestCommonArray[i-1][j-1] + 1
+                result = max(result, LongestCommonArray[i][j])
+            else:
+                LongestCommonArray[i][j] = 0
+    return result
 
+#Finding String
 def findString(Y):
-  report_list_keys = report_list.keys()
-  res = 0
-  res_string = ""
-  for i in report_list_keys:
-    m = len(i)
-    n = len(Y)
-    temp = longestCommonSubstring(i, Y, m, n)
-    if (res < temp):
-      res = temp
-      res_string = i
-  return res_string
+    report_list_keys = report_list.keys()
+    res = 0
+    res_string = ""
+    for i in report_list_keys:
+        m = len(i)
+        n = len(Y)
+        temp = longestCommonSubstring(i, Y, m, n)
+        if (res < temp):
+            res = temp
+            res_string = i
+    return res_string
 
+# Getting Line One
+def getStart(output):
+    start = "From the report, it is observed that "
+    i = 0
+    for k,v in output.items():
+        start += str(k)
+        start += " is "
+        start += str(v[0])
+        if i == len(output) - 2:
+            start += " and "
+        elif i == len(output) - 1:
+            start += "."
+        else:
+            start += ", "
+        i+=1
+    return start
+
+#Getting Final Output Dictionary
 def getAnalysis(output, report_list, priority_list):
-  result_list = list(output.keys())
-  for i in result_list:
-     temp = findString(i)
-     output[temp] = output[i]
-     del output[i]
-  result_list = list(output.keys())
-  final_dict = {}
-  high_priority_dict = {}
-  high_pri = 6
-  for i in result_list:
-    rep_list = report_list.get(i)
-    if rep_list != None:
-      priority = priority_list.get(i)
-      rep_list['priority'] = priority['priority']
-      final_dict[i] = rep_list
-      if priority['priority'] < high_pri:
-        high_pri = priority['priority']
-        high_priority_dict.clear()
-        high_priority_dict[i] = rep_list
-      elif priority['priority'] == high_pri:
-        high_priority_dict[i] = rep_list
+    result_list = list(output.keys())
+    for i in result_list:
+        temp = findString(i)
+        output[temp] = output[i]
+        del output[i]
+    result_list = list(output.keys())
+    final_dict = {}
+    high_priority_dict = {}
+    output_dict = {}
+    high_pri = 6
+    for i in result_list:
+        rep_list = report_list.get(i)
+        if rep_list != None:
+            priority = priority_list.get(i)
+            rep_list['priority'] = priority['priority']
+            final_dict[i] = rep_list
+            if priority['priority'] < high_pri:
+                high_pri = priority['priority']
+                high_priority_dict.clear()
+                high_priority_dict[i] = rep_list
+            elif priority['priority'] == high_pri:
+                high_priority_dict[i] = rep_list
 
-  high = []
-  low = []
-  for i in result_list:
-      if (output.get(i)[0] == "high"):
-         high.append(i)
-      else:
-         low.append(i)
-  if (high):
-    print("High Values: ", toString(high))
-  if (low): 
-    print("Low Values: ", toString(low))
-  temp = output.get(list(high_priority_dict.keys())[0])[0]
-  print("You should visit a", report_list.get(list(high_priority_dict.keys())[0])[temp][1], ", you have chances of", report_list.get(list(high_priority_dict.keys())[0])[temp][0])
-  for i in list(high_priority_dict.keys()):
-     generate(i, report_list, output.get(i)[0])
-     del output[i]
-  for i in list(output.keys()):
-     generate(i, report_list, output.get(i)[0])
-  # print("Final list of all: ", final_dict)
-  # print("Highest priority: ", high_priority_dict)
+    output_dict['start'] = getStart(output)
+    temp = output.get(list(high_priority_dict.keys())[0])[0]
+    output_dict['suggestion'] = "You should visit a " + str(report_list.get(list(high_priority_dict.keys())[0])[temp][1]) + ", you have chances of " + str(report_list.get(list(high_priority_dict.keys())[0])[temp][0])
+    
+    for i in list(high_priority_dict.keys()):
+        output_dict[str(i)] = generate(i, report_list, output.get(i)[0])
+        del output[i]
+    for i in list(output.keys()):
+        output_dict[str(i)] = generate(i, report_list, output.get(i)[0])
+    return output_dict
+    # print("X => ", x)
+    # print("Y => ", y)
+    # print("Final list of all: ", final_dict)
+    # print("Highest priority: ", high_priority_dict)
 
+#Output using ChatGPT
 def generate(elem, report_list, val):
-  # print("\n", elem.upper())
-  req_dict = report_list.get(elem)
-  # print(req_dict["information"])
-  # print(textGenerate("Write a note on " + elem))
-  # print(textGenerate("Ill effects of having " + val + " values of " + elem))
-  temp = req_dict["remedy_"+val]
-  # print("Home remedies to be taken are: ", toString(temp))
-  # print(textGenerate("Remedies that can be taken to cure "+ val + " values of " + elem))
-  fin = {}
-  fin["elem"] = elem
-  fin["intro1"] = req_dict["information"]
-  fin["intro2"] = textGenerate("Write a note on " + elem)
-  fin["effects"] = textGenerate("Ill effects of having " + val + " values of " + elem)
-  fin["rem1"] = "Home remedies to be taken are: " + toString(temp)
-  fin["rem2"] = textGenerate("Remedies that can be taken to cure "+ val + " values of " + elem)
-  print(fin)
+    # print("\n", elem.upper())
+    req_dict = report_list.get(elem)
+    # print(req_dict["information"])
+    # print(textGenerate("Write a note on " + elem))
+    # print(textGenerate("Ill effects of having " + val + " values of " + elem))
+    temp = req_dict["remedy_"+val]
+    # print("Home remedies to be taken are: ", toString(temp))
+    # print(textGenerate("Remedies that can be taken to cure "+ val + " values of " + elem))
+    fin = {}
+    fin["elem"] = elem
+    fin["intro1"] = req_dict["information"]
+    fin["intro2"] = textGenerate("Write a note on " + elem)
+    fin["intro2"] = fin["intro2"].replace("\n", "")
+    fin["effects"] = textGenerate("Ill effects of having " + val + " values of " + elem)
+    fin["effects"] = fin["effects"].replace("\n", "")
+    fin["rem1"] = "Home remedies to be taken are: " + toString(temp)
+    fin["rem2"] = textGenerate("Remedies that can be taken to cure "+ val + " values of " + elem)
+    fin["rem2"] = fin["rem2"].replace("\n", "")
+    return fin
 
+#ChatGPT
 def textGenerate(prompt):
-  openai.api_key = "##"
-  model_engine = "text-davinci-002"
-  completion = openai.Completion.create(
-    engine = model_engine,
-    prompt = prompt,
-    max_tokens = 1024,
-    n=1,
-    stop = None,
-    temperature = 0.9,
-  )
-  response = completion.choices[0].text.lstrip()
-  return response
+    openai.api_key = OPENAIKEY
+    model_engine = "text-davinci-002"
+    completion = openai.Completion.create(
+        engine = model_engine,
+        prompt = prompt,
+        max_tokens = 1024,
+        n=1,
+        stop = None,
+        temperature = 0.9,
+    )
+    response = completion.choices[0].text.lstrip()
+    return response
 
+#PDF to Image
 def convertpdf2image(file_name):
     pdf = pdfium.PdfDocument(file_name)
     images = []
@@ -312,22 +333,10 @@ def main(file_name):
         else:
             df = df.append(table_csv, ignore_index = True)
         os.remove(images[i])
-    df.to_csv("test.csv")
     anomalies = analysis(df)
-    print(anomalies) # output = {'Eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0], 'Vitamin B12 level (Serum,CMIA)': ['low', 0]}
-    output = dict((k.lower(), v) for k, v in anomalies.items()) 
-    f = open('../../Report Analysis/analysis.json')
-    report_list = json.load(f)
-    f.close()
-    g = open('../../Report Analysis/priority.json')
-    priority_list = json.load(g)
-    g.close()
-
-    # result_list = getPriority(output, priority_list)
-    # getAnalysis(result_list, output, report_list)
-
-    # getAnalysis(output, report_list, priority_list)
+    output = dict((k.lower(), v) for k, v in anomalies.items()) # {'Eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0], 'Vitamin B12 level (Serum,CMIA)': ['low', 0]}
+    x = getAnalysis(output, report_list, priority_list)
 
 if __name__ == "__main__":
-    file_name = sys.argv[1]
-    main(file_name)
+    # file_name = sys.argv[1]
+    main("XYZ")
