@@ -99,99 +99,99 @@
     },
     "alkaline_phosphatase": {
         "information": "Alkaline phosphatase (ALP) is a type of enzyme found in various tissues including the liver, bones, and intestines.",
-        "high": ["jaundice", "bone pain", "weakness or fatigue", "abdominal pain","loss of appetite"],
-        "low": ["muscle weakness", "bone fractures", "softening of the bones", "poor growth in children"],
+        "high": ["liver disease, bone disorders, and certain types of cancer","physician"],
+        "low": ["liver dysfunction, certain types of bone disorders, and malnutrition","physician"],
         "remedy_high": ["leafy green vegetables", "lean proteins, such as poultry, fish, and beans", "herbs and spices, such as turmeric and ginger", "reducing alcohol intake"],
         "remedy_low": ["dairy products, such as milk, yogurt, and cheese", "almonds", "meat and poultry, particularly liver and other organ meats","eggs","brown rice"]
     },
     "total_protein": {
         "information": "Total protein is a measurement of all the different types of protein in the blood, including albumin and globulin. It helps evaluate the overall protein status of an individual and can be used to diagnose certain conditions such as liver disease, kidney disease, malnutrition, and others.",
-        "high": ["swelling in the legs, ankles, or around the eyes","fatigue and weakness","loss of appetite","nausea and vomiting","confusion and disorientation"],
-        "low": ["swelling","fatigue","slow wound healing", "dry, thin skin", "hair loss", "physician"],
+        "high": ["inflammation, dehydration, liver and kidney disease, and some types of cancer","physician"],
+        "low": ["malnutrition, liver and kidney disease, and certain types of cancer", "physician"],
         "remedy_high": ["peanut butter","almonds","chickpeas","tofu","cottage cheese"],
         "remedy_low": ["fruits","vegetables","grains","legumes","potatoes","corn","sugar","milk","avocado"]
     },
     "albumin": {
         "information": "Albumin is a type of protein found in the blood and plays a crucial role in regulating fluid balance, transporting hormones and drugs in the bloodstream, and supporting overall immune function.",
-        "high": ["dehydration","liver disease", "physician"],
-        "low": ["swelling","nausea","dark urine","abdominal pain","decreased skin turgor", "physician"],
+        "high": ["dehydration, liver disease, and certain types of cancer", "physician"],
+        "low": ["malnutrition, liver disease, kidney disease, and certain types of cancer", "physician"],
         "remedy_high": ["lean protein like chicken, fish, tofu, legumes","limit salt and sugar intake","avoid processed and fried foods"],
         "remedy_low": ["Eat protein-rich foods like eggs, dairy, meat, poultry, fish","include high-calorie, nutrient-dense foods like nuts, avocados, olive oil","eggs","milk"]
     },
     "urea": {
         "information": "Urea is a waste product produced in the liver from the breakdown of amino acids. It is then excreted from the body through the kidneys in urine.",
-        "high": ["can reduce kidney function","fatigue and weakness","dry mouth and skin","muscle cramps or twitching","swelling in legs, ankles, and feet", "physician"],
-        "low": ["confusion and disorientation", "nausea and vomiting","abdominal pain and swelling","dark urine"],
+        "high": ["kidney disease, liver disease, and dehydration", "physician"],
+        "low": ["malnutrition, liver disease","physician"],
         "remedy_high": ["fruits","vegetables","dairy products","grains","beverages"],
         "remedy_low": ["meat","tofu and soy products","nuts and seeds","beans and legumes"]
     },
     "creatinine": {
         "information": "Creatinine is a waste product produced by muscle metabolism and filtered by the kidneys.",
-        "high": ["swelling in the legs, ankles, and feet","loss of appetite","changes in urine output or color","confusion or disorientation"],
-        "low": ["overhydrated state", "overactive muscle metabolism"],
+        "high": ["kidney disease, muscle damage","physician"],
+        "low": ["malnutrition, low muscle mass","physician"],
         "remedy_high": ["limit or avoid high-protein foods","consume plenty of fluids, such as water and low-sodium broths","limit or avoid high-potassium foods, such as bananas, oranges, potatoes, and tomatoes","limit or avoid high-phosphorus foods"],
         "remedy_low": ["fruits", "green vegetables"]
     },
     "uric_acid": {
         "information": "Uric acid is a waste product produced by the breakdown of purines, which are found in many foods, such as red meat, poultry, and seafood.",
-        "high": ["joint pain and swelling","kidney stones","stiffness and difficulty moving affected joints","tophi, lumps of uric acid crystals that form under the skin near affected joints"],
-        "low": ["Wilson's disease, a genetic disorder that affects copper metabolism"],
+        "high": ["gout, kidney disease, and certain types of cancer","physician"],
+        "low": ["genetic disorders, and liver disease","physician"],
         "remedy_high": ["limit or avoid high-purine foods","consume low-fat dairy products","choose complex carbohydrates","limit or avoid alcohol"],
         "remedy_low": ["fruits", "green vegetables", "water", "increase protein diet"]
     },
     "calcium": {
         "information": "Calcium is a crucial mineral for human health, playing a key role in building and maintaining strong bones, regulating muscle contractions, and transmitting nerve impulses.",
-        "high": ["fatigue and weakness","increased thirst","frequent urination","constipation"],
-        "low": ["tingling or numbness in the fingers, toes, and face","poor appetite and weight loss","dry skin and hair","brittle nails"],
+        "high": ["overactive parathyroid glands, certain types of cancer","physician"],
+        "low": ["parathyroid gland disorders and kidney disease","physician"],
         "remedy_high": ["salty foods","low-fat dairy products","leafy green vegetables","beans and lentils","whole grains"],
         "remedy_low": ["green vegetables", "consume more diary products","nuts and seeds","fish with soft bones that can be eaten, such as salmon and sardines"]
     },
     "phosphorous": {
         "information": "Phosphorus is a mineral essential to the human body, playing a role in the formation of DNA, cell membranes, and energy storage and transfer through ATP. It is also important for the proper functioning of kidneys, bones, and teeth.",
-        "high": ["weakness and fatigue","bone pain","itching and rashes","loss of appetite"],
-        "low": ["heart problems","breathing difficulties","anemia","muscle weakness, cramps, and twitching"],
+        "high": ["kidney disease, certain types of cancer ","physician"],
+        "low": ["liver disease and alcohol abuse","physician"],
         "remedy_high": ["reduce meaty foods","reduce dairy products","reduce whole grains","reduce nuts and seeds"],
         "remedy_low": [ "fruits", "vegetables", "whole grains","lean proteins", "meat","poultry","fish"]
     },
     "sodium": {
         "information": "Sodium is an electrolyte that helps regulate fluid balance, maintain blood pressure, and support proper muscle and nerve function in the human body.",
-        "high": ["thirst","headache","seizures","fatigue","swelling","confusion and changes in mental function"],
-        "low": ["nausea and vomiting","unconsciousness","swelling","muscle cramps, spasms, and twitching"],
+        "high": ["kidney disease and adrenal gland disorders","physician"],
+        "low": ["kidney disease, heart failure, and liver disease","physician"],
         "remedy_high": ["Limiting consumption of processed, packaged, and restaurant foods","herbs, spices, and other seasonings in place of salt to add flavor to your food","fresh fruits", "vegetables", "whole grains","lean proteins"],
         "remedy_low": ["table salt", "bouillon or broth","soy sauce","meat, poultry, and fish","processed foods, such as canned soups and packaged snacks"]
     },
     "potassium": {
         "information": "Potassium is an essential mineral that plays a vital role in maintaining proper heart and muscle function, as well as fluid balance in the human body.",
-        "high": ["muscle weakness or paralysis","numbness or tingling","breathing difficulties","chest pain","irregular heartbeat or palpitations"],
-        "low": ["confusion or changes in mental function","constipation","muscle weakness or cramps","fatigue"],
+        "high": ["kidney disease, adrenal gland disorders","physician"],
+        "low": ["malnutrition","diuretics","physician"],
         "remedy_high": ["limit bananas","limit milk and yogurt","limit avocados","limit nuts and seeds","limit spinach and other leafy greens"],
         "remedy_low": ["spinach and other leafy greens","cantaloupe","prunes and raisins","sweet potatoes","oranges","bananas"]
     },
     "chloride": {
         "information": "Chloride is an important electrolyte in the human body, playing a role in maintaining fluid balance and supporting proper digestion by producing stomach acid. It also helps to regulate the balance of acids and electrolytes in the blood, and works in conjunction with other electrolytes such as sodium and potassium to maintain proper fluid balance and blood pressure.",
-        "high": ["nausea and vomiting","rapid breathing or shortness of breath","muscle weakness or cramps","seizures"],
-        "low": ["rapid heartbeat","dehydration","breathing difficulties","loss of appetite"],
+        "high": ["kidney disease and adrenal gland disorders","physician"],
+        "low": ["malnutrition, vomiting and diarrhea","physician"],
         "remedy_high": ["reduce processed foods, such as canned soups, processed meats, and cheese","reduce table salt","reduce olives","reduce seaweed and seaweed products"],
         "remedy_low": ["unsalted nuts and seeds","tofu and tempeh","herbs, spices, and seasonings without added salt","rice, pasta, bread, and cereal","dairy alternatives such as almond milk or soy milk"]
     },
     "HbA1c": {
         "information": "HbA1c (also known as glycated hemoglobin) is a form of hemoglobin that is bound to glucose in the blood. It is commonly used as a marker of average blood sugar levels over the past 2-3 months and is used to diagnose and monitor diabetes and other conditions affecting blood sugar control.",
-        "high": ["increased thirst","slow-healing cuts or wounds","yeast infections","blurred vision"],
-        "low": ["hunger","shakiness","sweating","headaches","dizziness","physician"],
+        "high": ["diabetes, such as nerve damage, kidney disease, and eye problems","physician"],
+        "low": ["anemia or liver disease","physician"],
         "remedy_high": ["green vegetables","brown rice", "whole-grain bread","whole-grain pasta","include lean protein", "avoid sugary foods"],
         "remedy_low": ["intake sugary foods till it reaches a proper level", "fruits","eat regularly spaced meals","include complex carbohydrates"]
     },
     "estimated_average_glucose": {
         "information": "Estimated Average Glucose (eAG) is a measurement of average blood sugar levels, calculated from HbA1c levels. It provides a rough estimate of average blood glucose levels over the past 2-3 months and is used to monitor diabetes and other conditions affecting blood sugar control.",
-        "high": ["increased thirst","slow healing of cuts and bruises","skin infections","blurred vision"],
-        "low": ["Sweating","Shaking","Hunger","Dizziness","Confusion","Headache"],
+        "high": ["nerve damage, kidney disease, and eye problems","physician"],
+        "low": ["hypoglycemia or liver disease","physician"],
         "remedy_high": ["limit alcohol consumption","fiber-rich carbohydrates","non-starchy vegetables","limit intake of sugary foods and drinks"],
         "remedy_low": ["leafy green vegetables","non-starchy vegetables","whole grains","avocados"]
     },
     "glucose_fasting": {
         "information": "Fasting glucose is a measurement of the amount of glucose (sugar) in a person's blood after they have gone without food for at least 8 hours. It is used to diagnose and monitor diabetes, as well as to assess a person's overall glucose metabolism.",
-        "high": ["excessive thirst","fatigue","hunger","blurred vision","chances of diabetes"],
-        "low": ["shakiness","Nervousness or irritability","headache","dizziness or lightheadedness"],
+        "high": ["chances of diabetes","physician"],
+        "low": ["liver or kidney disease","physician"],
         "remedy_high": ["non-starchy vegetables","high-fiber carbohydrates","lean proteins","low-fat dairy products"],
         "remedy_low": ["intake sugary foods till it reaches a proper level", "fruits","soda","peanut butter","greek yogurt","hard-boiled eggs"]
     },
