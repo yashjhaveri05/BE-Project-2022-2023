@@ -10,6 +10,7 @@ import sys
 from dotenv import load_dotenv
 import pypdfium2 as pdfium
 import openai
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"": {"origins": "*"}})
@@ -330,30 +331,34 @@ def convertpdf2image(file_name):
 @cross_origin()
 def analyzeSummarize():
     if request.files['file']:
-        file_name = request.files['file']
-        file_type = request.data['type']
+        file = request.files['file']
     else:
         return jsonify("Please Upload A File")
-    if file_type == "pdf":
-        images = convertpdf2image(file_name)
-        for i in range(len(images)):
-            table_csv = get_table_csv_results(images[i])
-            if table_csv.empty:
-                pass
-            elif i==0:
-                df = table_csv
-            elif i==3:
-                break
-            else:
-                df = df.append(table_csv, ignore_index = True)
-            os.remove(images[i])
-    elif file_type == "img":
-        df = get_table_csv_results(file_type)
+    filename = secure_filename(file.filename)
+    file.save(os.path.join('', filename))
+    # file_type = "2"
+    # if file_type == "1":
+    #     images = convertpdf2image(filename)
+    #     for i in range(len(images)):
+    #         table_csv = get_table_csv_results(images[i])
+    #         if table_csv.empty:
+    #             pass
+    #         elif i==0:
+    #             df = table_csv
+    #         elif i==3:
+    #             break
+    #         else:
+    #             df = df.append(table_csv, ignore_index = True)
+    #         os.remove(images[i])
+    # elif file_type == "2":
+    df = get_table_csv_results(filename)
+    os.remove(filename)
     anomalies = analysis(df)
     output = dict((k, v) for k, v in anomalies.items()) 
     # output = {'Eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0], 'Vitamin B12 level (Serum,CMIA)': ['low', 0]}
     response_opt = getAnalysis(output, report_list, priority_list)
     return jsonify(response_opt)
+    # return jsonify({"hello":"world"})
 
 if __name__ == "__main__":
     app.run(debug=True, port=8000)

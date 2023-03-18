@@ -338,5 +338,5 @@ def main(file_name):
     x = getAnalysis(output, report_list, priority_list)
 
 if __name__ == "__main__":
-    # file_name = sys.argv[1]
-    main("XYZ")
+    file_name = sys.argv[1]
+    main(file_name)
