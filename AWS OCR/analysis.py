@@ -121,7 +121,7 @@ def generate(elem, report_list, val):
   print(fin)
 
 def textGenerate(prompt):
-  openai.api_key = "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"
+  openai.api_key = "##"
   model_engine = "text-davinci-002"
   completion = openai.Completion.create(
     engine = model_engine,
