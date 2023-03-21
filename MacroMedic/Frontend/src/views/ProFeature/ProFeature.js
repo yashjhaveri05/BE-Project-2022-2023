@@ -20,7 +20,7 @@ import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import styled from "styled-components";
 import api from "../../utils/api";
-
+import axios from "axios";
 import Notify from "../../notification/Notify";
 
 import usePayment from "../../components/Payment/usePayment";
@@ -110,6 +110,7 @@ export default function ProFeature() {
     BloodPressure:0
     })
     const [report,setReport]=React.useState(null);
+    const [extract,setExtract]=React.useState(null);
     const [submitted,setSubmitted]=React.useState(false);
 
   
@@ -251,23 +252,108 @@ export default function ProFeature() {
     }
   };
 
-  const handleSubmit=()=>{
+  const handleSubmit=async()=>{
     console.log("Code to extract summary")
     setSubmitted(true);
     // write api for summary
+    var formdata = new FormData();
+    console.log(report)
+    formdata.append("file", report, "filepath");
+    formdata.append("type", "2");
+    console.log(formdata)
+
+    // var requestOptions = {
+    //   method: 'POST',
+    //   body: formdata,
+    //   redirect: 'follow',
+    //   mode:'no-cors',
+    //   headers: {
+    //     "Content-type": "application/json; charset=UTF-8",
+    //     "Accept": "application/json"
+
+    //   }
+
+    // };
+    let response = await axios.post("http://127.0.0.1:8000/", formdata,{headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      "Accept": "application/json"
+      }
+    }
+    )
+    setExtract(response.data)
+    console.log("Extracted", response.data)
+    // console.log("data",data)
+
+    // await fetch("http://127.0.0.1:8000/", requestOptions)
+    // .then(response => {
+    //   console.log("res",response)
+    //   if (response.ok) {
+    //     response.json().then(json => {
+    //       console.log(json);
+    //     });
+    //   }
+    //   else{
+    //     console.log("here")
+    //   }
+    // });
+      // .then(result => setExtract(result))
+      // .catch(error => console.log('error', error));
+      // setExtract(response)
+      // console.log("extract",extract)
+
   }
   return (
     <>
       <Card>
-        {submitted?(<>
+        {submitted?(<>{extract?(<>
           <CardHeader color="warning">
           <h4 className={classes.cardTitleWhite}>
             Summary of the report generated
           </h4>
         </CardHeader>
         <CardBody>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+       <p>Observation: {extract.start}</p>
+       <p>Suggestion: {extract.suggestion}</p>
+       <div>
+       {Object.keys(extract).map(ex=>{
+        console.log(ex)
+        if(ex=="start" || ex=="suggestion"){
+          let list=(<></>);
+          return list;
+        
+        }
+        else{
+          const list = (
+            <>
+              <ul>
+                <li>Element:{extract[ex].elem}</li>
+                <li>Introduction:{extract[ex].intro1}</li>
+                <li>Effect:{extract[ex].effects}</li>
+                <li>Remedy:{extract[ex].rem1}</li>
+              </ul>
+              <hr />
+            </>
+          );
+          return list;
+        }
+        
+       })
+       }
+    </div>
+      
+       
         </CardBody>
+        </>):(<>
+          <CardHeader color="warning">
+          <h4 className={classes.cardTitleWhite}>
+            Extracting.....
+          </h4>
+        </CardHeader>
+        <CardBody>
+        <img src="https://assets.materialup.com/uploads/518165c7-66a8-4494-b954-c12e31373256/preview.gif" alt="loading..." style={{display:"flex" ,margin:"auto"}} />
+        </CardBody>
+        </>)}
+         
         </>):(<>
           <CardHeader color="warning">
           <h4 className={classes.cardTitleWhite}>

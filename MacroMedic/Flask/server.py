@@ -137,6 +137,7 @@ def generate_table_csv(table_result, blocks_map, table_index):
             data = {}
             break
     df = pd.DataFrame(data)
+    
     return df
 
 # Extracting abnormal parameters
@@ -357,6 +358,7 @@ def analyzeSummarize():
     output = dict((k, v) for k, v in anomalies.items()) 
     # output = {'Eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0], 'Vitamin B12 level (Serum,CMIA)': ['low', 0]}
     response_opt = getAnalysis(output, report_list, priority_list)
+    print(jsonify(response_opt))
     return jsonify(response_opt)
     # return jsonify({"hello":"world"})
 
