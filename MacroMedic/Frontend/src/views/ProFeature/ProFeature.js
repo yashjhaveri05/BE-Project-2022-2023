@@ -334,7 +334,7 @@ export default function ProFeature() {
                 </CardHeader>
                 <CardBody>
                
-               Introduction: {extract[ex].intro1}
+               Introduction: {extract[ex].intro1 +" "+ extract[ex].intro2}
                <hr style={{
                     borderWidth: 0.01,
                     padding: "4px auto", 
@@ -344,7 +344,7 @@ export default function ProFeature() {
                     borderWidth: 0.01,
                     padding: "4px auto",
                   }}/>
-               Remedy: {extract[ex].rem1}
+               Remedy: {extract[ex].rem1 +" "+ extract[ex].rem2}
                 </CardBody>
               
           
