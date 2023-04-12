@@ -312,8 +312,9 @@ export default function ProFeature() {
           </h4>
         </CardHeader>
         <CardBody>
-       <p>Observation: {extract.start}</p>
-       <p>Suggestion: {extract.suggestion}</p>
+       <p><b>Observation:</b> {extract.start}</p>
+       <p><b>Suggestion:</b> {extract.suggestion}</p>
+       <h6><b>The elements which were extracted from the report are as follows:</b></h6>
        <div>
        {Object.keys(extract).map(ex=>{
         console.log(ex)
@@ -324,15 +325,31 @@ export default function ProFeature() {
         }
         else{
           const list = (
-            <>
-              <ul>
-                <li>Element:{extract[ex].elem}</li>
-                <li>Introduction:{extract[ex].intro1}</li>
-                <li>Effect:{extract[ex].effects}</li>
-                <li>Remedy:{extract[ex].rem1}</li>
-              </ul>
-              <hr />
-            </>
+            <Card>
+              
+              <CardHeader color="warning">
+              <h4 className={classes.cardTitleWhite}>
+              {extract[ex].elem}
+              </h4>
+                </CardHeader>
+                <CardBody>
+               
+               Introduction: {extract[ex].intro1}
+               <hr style={{
+                    borderWidth: 0.01,
+                    padding: "4px auto", 
+                  }}/>
+               Effect: {extract[ex].effects}
+               <hr style={{
+                    borderWidth: 0.01,
+                    padding: "4px auto",
+                  }}/>
+               Remedy: {extract[ex].rem1}
+                </CardBody>
+              
+          
+              </Card>
+           
           );
           return list;
         }

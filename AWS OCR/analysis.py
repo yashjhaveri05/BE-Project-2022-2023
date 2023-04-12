@@ -55,7 +55,7 @@ g = open('../Report Analysis/priority.json')
 priority_list = json.load(g)
 g.close()
 
-output = {'Eosinophils': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0], 'Vitamin B12 level (Serum,CMIA)': ['low', 0]}
+output = {'cholestrol': ['high', 1], 'MPV (Mean Platelet Volume)': ['high', 0], 'Vitamin B12 level (Serum,CMIA)': ['low', 0]}
 # output = dict((k.lower(), v) for k, v in output.items()) 
 
 def getAnalysis(output, report_list, priority_list):
@@ -121,7 +121,7 @@ def generate(elem, report_list, val):
   print(fin)
 
 def textGenerate(prompt):
-  openai.api_key = "##"
+  openai.api_key = "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"
   model_engine = "text-davinci-002"
   completion = openai.Completion.create(
     engine = model_engine,
