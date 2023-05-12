@@ -117,7 +117,7 @@ export default function ProFeature() {
 
   function getSteps() {
     return [
-      "Choose Report Type",
+      // "Choose Report Type",
       "Upload Medical Record",
       "Submit",
     ];
@@ -126,29 +126,29 @@ export default function ProFeature() {
 
   function getStepContent(stepIndex) {
     switch (stepIndex) {
+      // case 0:
+      //   return (
+      //       <div>
+      //           {symptomArr.length!=0 ?(
+      //             <h5 style={{ margin: 8 }}>
+      //         You have chosen the following report type: {symptomArr+" "}. Kindly complete the
+      //         remaining steps to extract information
+      //       </h5>):(null)}
+      //       {symptoms &&
+      //         Object.keys(symptoms).map((key) => (
+      //           <Button
+      //             color={symptoms[key] == 0 ? "primary" : "success"}
+      //             onClick={() => onClickHandler(key)}
+      //             style={{
+      //               margin: 8,
+      //             }}
+      //           >
+      //             {key}
+      //           </Button>
+      //         ))}
+      //     </div>
+      //   );
       case 0:
-        return (
-            <div>
-                {symptomArr.length!=0 ?(
-                  <h5 style={{ margin: 8 }}>
-              You have chosen the following report type: {symptomArr+" "}. Kindly complete the
-              remaining steps to extract information
-            </h5>):(null)}
-            {symptoms &&
-              Object.keys(symptoms).map((key) => (
-                <Button
-                  color={symptoms[key] == 0 ? "primary" : "success"}
-                  onClick={() => onClickHandler(key)}
-                  style={{
-                    margin: 8,
-                  }}
-                >
-                  {key}
-                </Button>
-              ))}
-          </div>
-        );
-      case 1:
         return (
             <>
                 <input
@@ -163,7 +163,7 @@ export default function ProFeature() {
               /></>
        
         );
-      case 2:
+      case 1:
         return (
             <>
              <h5 style={{ margin: 8 }}>
@@ -187,14 +187,14 @@ export default function ProFeature() {
     //   setSuccess(true);
         console.log("activeStep === steps.length - 1")
     } 
-    else if (activeStep === 0) {
-    if(symptomArr.length==0){
-        Swal.fire("Select report type");
-    }
-    else{
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    }
-    } 
+    // else if (activeStep === 0) {
+    // if(symptomArr.length==0){
+    //     Swal.fire("Select report type");
+    // }
+    // else{
+    //     setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    // }
+    // } 
     else if (activeStep === 1) {
         if(!report){
             Swal.fire("Please upload a report");
